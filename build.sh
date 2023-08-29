@@ -1,2 +1,3 @@
-sudo nixos-rebuild build --flake .#lent480
-#sudo nixos-rebuild build --flake .#lent480 --show-trace
+echo building for host: $HOSTNAME
+sudo nixos-rebuild build --flake .#
+#sudo nixos-rebuild build --flake .# --show-trace

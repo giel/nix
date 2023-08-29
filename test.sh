@@ -1,2 +1,3 @@
-sudo nixos-rebuild test --flake .#lent480
-#sudo nixos-rebuild test --flake .#lent480 --show-trace
+echo switching for host: $HOSTNAME
+sudo nixos-rebuild test --flake .#
+#sudo nixos-rebuild test --flake .# --show-trace
