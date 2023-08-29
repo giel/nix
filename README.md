@@ -33,8 +33,8 @@ usually with `sudo`:
 
 normal commands
 
-     nix-store --garbage-collect
-     nix-store --optimize
+     nix-store --gc         # garbage-collect
+     nix-store --optimize   # 
 
 flake commands
 
@@ -59,7 +59,7 @@ With **update** you can update the channels.
 - [Mathew Croughan nixcfg](https://github.com/MatthewCroughan/nixcfg)
 - [Matthias Benaets nixos-config](https://github.com/MatthiasBenaets/nixos-config/)
 - [Nix starter configs](https://github.com/Misterio77/nix-starter-configs)
-- [NixOS Gnome settings and keyboard shortcuts)](https://the-empire.systems/nixos-gnome-settings-and-keyboard-shortcuts)
+- [NixOS Gnome settings and keyboard shortcuts](https://the-empire.systems/nixos-gnome-settings-and-keyboard-shortcuts)
 
 # hardware
 ### dotfiles-lent480
