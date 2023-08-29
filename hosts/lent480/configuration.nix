@@ -3,9 +3,10 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     ./home.nix
-    ./gnome.nix
+    # choose kde or gnome
+    # ./gnome.nix
+    ./kde.nix
     ./sound.nix
-#   users-matthewcroughan
     mixins-openssh
    ];
 
@@ -16,6 +17,15 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Setup keyfile
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
+
+  # Enable swap on luks
+  boot.initrd.luks.devices."luks-db380faf-79b0-41e4-b70f-3314ef8469d0".device = "/dev/disk/by-uuid/db380faf-79b0-41e4-b70f-3314ef8469d0";
+  boot.initrd.luks.devices."luks-db380faf-79b0-41e4-b70f-3314ef8469d0".keyFile = "/crypto_keyfile.bin";
 
 #  nixpkgs.overlays = [
 #    (self: super: {
@@ -75,6 +85,7 @@
 
   console = {
     font = "Lat2-Terminus16";
+    # font = "Lat2-Terminus22";
     keyMap = "us";
   };
 
@@ -101,6 +112,9 @@
       sensitivity = 255;
     };
   };
+
+ # Enable bluetooth
+  hardware.bluetooth.enable = true;
 
   environment.systemPackages = with pkgs; [
      bluez
