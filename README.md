@@ -29,7 +29,7 @@ usually with `sudo`:
      nixos-rebuild switch
      nixos-rebuild switch --rollback
 
-     nix-channel update
+     nix-channel --update
 
 normal commands
 
