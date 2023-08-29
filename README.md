@@ -6,6 +6,9 @@ A repository to contain all my nix stuff. For now only NixOS related.
 Add all channels. We are going to use home-manager as a module, so add like this:
 
         sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
+        sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixos-unstable
+        sudo nix-channel --add https://nixos.org/channels/nixos-23.05 nixos
+
 
 Show result:
 
