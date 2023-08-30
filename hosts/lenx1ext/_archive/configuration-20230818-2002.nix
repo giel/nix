@@ -5,22 +5,19 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
   # enable some experimental features
   # https://nixos.org/manual/nix/stable/command-ref/conf-file#conf-experimental-features
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
+  boot.initrd.secrets = { "/crypto_keyfile.bin" = null; };
 
   networking.hostName = "lenx1ext"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -92,9 +89,10 @@
     description = "Giel Scharff";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-    #  managed by home-manager: see ~/git/dotfiles-lenx1ext/nixos/users/giels/home.nix
-    ];
+    packages = with pkgs;
+      [
+        #  managed by home-manager: see ~/git/dotfiles-lenx1ext/nixos/users/giels/home.nix
+      ];
   };
 
   # Allow unfree packages
@@ -103,19 +101,19 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     bluez
-     curl
-     file
-     firefox
-     git
-     git-lfs
-     gnome.gnome-shell-extensions
-     gnome.gnome-tweaks
-     neofetch
-     vim
-     wget
-     xclip
+    #  Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    bluez
+    curl
+    file
+    firefox
+    git
+    git-lfs
+    gnome.gnome-shell-extensions
+    gnome.gnome-tweaks
+    neofetch
+    vim
+    wget
+    xclip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

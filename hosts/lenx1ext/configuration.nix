@@ -4,25 +4,24 @@
     ./home.nix
     mixins-soundpipewire
     packages-systemminimal
+    packages-userminimal
     # choose desktop: xfce, kde or gnome
     # desktop-gnome
     # desktop-kde
     # desktop-xfce
     desktop-gnome
     mixins-openssh
-    ];
+  ];
   # enable some experimental features
   # https://nixos.org/manual/nix/stable/command-ref/conf-file#conf-experimental-features
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
+  boot.initrd.secrets = { "/crypto_keyfile.bin" = null; };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.giels = {
@@ -109,26 +108,25 @@
     ];
   };
 
-#  # Enable sound with pipewire.
-#  sound.enable = true;
-#  hardware.pulseaudio.enable = false;
-#  security.rtkit.enable = true;
-#  services.pipewire = {
-#    enable = true;
-#    alsa.enable = true;
-#    alsa.support32Bit = true;
-#    pulse.enable = true;
-#    # If you want to use JACK applications, uncomment this
-#    #jack.enable = true;
-#
-#    # use the example session manager (no others are packaged yet so this is enabled by default,
-#    # no need to redefine it in your config for now)
-#    #media-session.enable = true;
-#  };
+  #  # Enable sound with pipewire.
+  #  sound.enable = true;
+  #  hardware.pulseaudio.enable = false;
+  #  security.rtkit.enable = true;
+  #  services.pipewire = {
+  #    enable = true;
+  #    alsa.enable = true;
+  #    alsa.support32Bit = true;
+  #    pulse.enable = true;
+  #    # If you want to use JACK applications, uncomment this
+  #    #jack.enable = true;
+  #
+  #    # use the example session manager (no others are packaged yet so this is enabled by default,
+  #    # no need to redefine it in your config for now)
+  #    #media-session.enable = true;
+  #  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
