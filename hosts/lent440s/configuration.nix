@@ -2,10 +2,13 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     ./home.nix
-    # choose kde, gnome or xfce
-    # ./gnome.nix
-    # ./kde.nix
-    ./xfce.nix
+    packages-systemminimal
+    packages-userminimal
+    # choose desktop: xfce, kde or gnome
+    # desktop-gnome
+    # desktop-kde
+    # desktop-xfce
+    desktop-xfce
     ./sound.nix
     mixins-openssh
   ];
@@ -122,23 +125,8 @@
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    bluez
-    curl
-    file
-    git
-    git-lfs
-    neofetch
-    vim
-    wget
-    xclip
-    zsh
-  ];
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  programs.zsh.enable = true;
 
   system.stateVersion = "23.05";
 }

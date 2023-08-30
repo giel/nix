@@ -2,11 +2,12 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     ./home.nix
-    # choose kde or gnome
-    # desktop-gnome
-    # desktop-kde
     ./sound.nix
     packages-systemminimal
+    # choose desktop: xfce, kde or gnome
+    # desktop-gnome
+    # desktop-kde
+    # desktop-xfce
     desktop-kde
     mixins-openssh
   ];

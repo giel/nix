@@ -9,7 +9,6 @@ Add all channels. We are going to use home-manager as a module, so add like this
         sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixos-unstable
         sudo nix-channel --add https://nixos.org/channels/nixos-23.05 nixos
 
-
 Show result:
 
         sudo nix-channel --list
@@ -21,7 +20,6 @@ A first `flake.nix` is generated, filled from several examples and only in use o
 
 
 # NixOS / Nix commands
-
 
 ### sample commands
 
@@ -45,14 +43,41 @@ flake commands
      sudo nixos-rebuild switch --flake .#lent480
      sudo nixos-rebuild switch --flake ~/github/dotfiles-lent480/#lent480
 
-see `.sh` scripts for easy use.
+**see `.sh` scripts for easy use.**
 
 ### scripts
 
-The folder `nixos` contains the flake config. This is the more advanced version of the folder `nixos_flakeless`
+The batchfiles in the directory can be used to easily **build**, **test**, **switch** the configurastion for the nachine you are logged on.
 
-The batchfiles in the directory can be used to easily **build**, **test**, **switch** the configurastion for the `lent480`.
 With **update** you can update the channels.
+
+
+### setup
+
+The `flake.nix` file contains the entry point for all NixOS configurations.
+See `nixosConfigurations` array for the machines configured. Each machine configured has a corresponding folder in the `hosts` folder. The computer folder (like *lent480*) contains `.nix` files specific for this computer.
+
+The `modules` folder contains generic code used in the machine configurations.
+
+To **add a module**:
+
+- create new category if needed (like *desktop*)
+- add `mymodule.nix`
+- add new files to git (**important**)
+- refer to the module in an import like `desktop-mymodule`. Not that the `-` is used instead of a path separator.
+- use `./fmt.sh` to format all nix files
+
+To **add a machine**:
+
+- add en new entry in `flake.nix` in the `nixosConfigurations`.
+- create a new folder in `hosts` named after the machine named
+- copy initial `configuration.nix` and `hardware-configuration.nix` into this folder
+- make sure the configuration in the flake points to the new `configuration.nix`
+- add new files to git, else you may get errors (**important**)
+- `./build.sh` to check the syntax and see if it can build
+- `./test.sh` to build and test the configuration. New applications are available after a successful test.
+- use `./fmt.sh` to format all nix files
+- `./switch.sh` to activate a new configuration. This will be the default in the startup of the machine.
 
 
 # links

@@ -1,8 +1,4 @@
 echo formatting
-# nixfmt *.nix
-# nixfmt modules\*.nix
-# nixfmt hosts\*.nix
-
 # Directory containing .nix files
 directory="/home/giels/git/nix"
 
