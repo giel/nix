@@ -28,6 +28,7 @@
          lsd
          meld
          neovim
+         nixfmt
          nodejs_20
          openvpn
          python39
