@@ -2,6 +2,7 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     ./home.nix
+    mixins-soundpipewire
     packages-systemminimal
     packages-userminimal
     # choose desktop: xfce, kde or gnome
@@ -9,7 +10,6 @@
     # desktop-kde
     # desktop-xfce
     desktop-xfce
-    ./sound.nix
     mixins-openssh
   ];
 

@@ -4,6 +4,7 @@
     ./home.nix
     mixins-soundpipewire
     packages-systemminimal
+    packages-userminimal
     # choose desktop: xfce, kde or gnome
     # desktop-gnome
     # desktop-kde
