@@ -47,6 +47,18 @@
           ];
           specialArgs = { inherit inputs; };
         };
+        lenx1ext = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/lenx1ext/configuration.nix
+            utils.nixosModules.autoGenFromInputs
+            home-manager.nixosModules.home-manager
+            nixos-hardware.nixosModules.lenovo-thinkpad-t480
+            nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
+            nixos-hardware.nixosModules.common-gpu-intel
+          ];
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }
