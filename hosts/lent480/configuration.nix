@@ -3,9 +3,11 @@
     ./hardware-configuration.nix
     ./home.nix
     # choose kde or gnome
-    # ./gnome.nix
-    ./kde.nix
+    # desktop-gnome
+    # desktop-kde
     ./sound.nix
+    packages-systemminimal
+    desktop-kde
     mixins-openssh
   ];
 
@@ -128,23 +130,8 @@
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    bluez
-    curl
-    file
-    git
-    git-lfs
-    neofetch
-    vim
-    wget
-    xclip
-    zsh
-  ];
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  programs.zsh.enable = true;
 
   system.stateVersion = "23.05";
 }
