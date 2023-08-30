@@ -5,7 +5,7 @@
   services = {
     # Enable the X11 windowing system.
     xserver = {
-    # Enable the GNOME Desktop Environment.
+      # Enable the GNOME Desktop Environment.
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
     };
@@ -19,16 +19,14 @@
       gnome.gnome-tweaks
     ];
     # Gnome ignored packages
-    gnome.excludePackages = (with pkgs; [         
-      gnome-tour
-    ]) ++ (with pkgs.gnome; [
+    gnome.excludePackages = (with pkgs; [ gnome-tour ]) ++ (with pkgs.gnome; [
       geary
       gnome-calendar
       gnome-contacts
       gnome-initial-setup
     ]);
   };
-  
+
   # Enable dconf for programs that might need it
   programs.dconf.enable = true;
 
@@ -37,14 +35,14 @@
 
       dconf.settings = {
         "org/gnome/shell" = {
-           favorite-apps = [
-             "org.gnome.Settings.desktop"
-             "Alacritty.desktop"
-             "firefox.desktop"
-             "org.gnome.Nautilus.desktop"
-             "org.remmina.Remmina.desktop"
-             "virt-manager.desktop"
-           ];
+          favorite-apps = [
+            "org.gnome.Settings.desktop"
+            "Alacritty.desktop"
+            "firefox.desktop"
+            "org.gnome.Nautilus.desktop"
+            "org.remmina.Remmina.desktop"
+            "virt-manager.desktop"
+          ];
           disable-user-extensions = false;
           disabled-extensions = "disabled";
           enabled-extensions = [

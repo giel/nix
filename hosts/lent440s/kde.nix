@@ -7,23 +7,14 @@
     xserver = {
       # Enable the KDE Plasma Desktop Environment.
       displayManager.sddm.enable = true;
-      desktopManager.plasma5 = {
-        enable = true;
-      };
+      desktopManager.plasma5 = { enable = true; };
     };
   };
 
   environment = {
     # extra KDE  packages
-    systemPackages = with pkgs.libsForQt5; [
-      packagekit-qt
-      bismuth
-    ];
-    plasma5.excludePackages = (with pkgs; [
-      elisa
-      khelpcenter
-      oxygen
-    ]);
+    systemPackages = with pkgs.libsForQt5; [ packagekit-qt bismuth ];
+    plasma5.excludePackages = (with pkgs; [ elisa khelpcenter oxygen ]);
 
   };
 

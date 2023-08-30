@@ -7,9 +7,7 @@
     xserver = {
       # Enable the xfce Desktop Environment.
       displayManager.lightdm.enable = true;
-      desktopManager.xfce = {
-        enable = true;
-      };
+      desktopManager.xfce = { enable = true; };
     };
   };
 
