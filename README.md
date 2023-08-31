@@ -91,28 +91,6 @@ To **add a machine**:
 - [NixOS Gnome settings and keyboard shortcuts](https://the-empire.systems/nixos-gnome-settings-and-keyboard-shortcuts)
 
 # hardware
-### lent480
-
-              ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖            giels@lent480 
-              ▜███▙       ▜███▙  ▟███▛            ------------- 
-               ▜███▙       ▜███▙▟███▛             OS: NixOS 23.05.2975.a16f7eb56e88 (Stoat) x86_64 
-                ▜███▙       ▜██████▛              Host: LENOVO 20L6S01Q3U 
-         ▟█████████████████▙ ▜████▛     ▟▙        Kernel: 6.1.46 
-        ▟███████████████████▙ ▜███▙    ▟██▙       Uptime: 1 hour, 8 mins 
-               ▄▄▄▄▖           ▜███▙  ▟███▛       Packages: 981 (nix-system), 591 (nix-user) 
-              ▟███▛             ▜██▛ ▟███▛        Shell: bash 5.2.15 
-             ▟███▛               ▜▛ ▟███▛         Resolution: 1920x1080 
-    ▟███████████▛                  ▟██████████▙   DE: GNOME 44.2 (Wayland) 
-    ▜██████████▛                  ▟███████████▛   WM: Mutter 
-          ▟███▛ ▟▙               ▟███▛            WM Theme: Adwaita 
-         ▟███▛ ▟██▙             ▟███▛             Theme: Adwaita [GTK2/3] 
-        ▟███▛  ▜███▙           ▝▀▀▀▀              Icons: Adwaita [GTK2/3] 
-        ▜██▛    ▜███▙ ▜██████████████████▛        Terminal: kgx 
-         ▜▛     ▟████▙ ▜████████████████▛         CPU: Intel i5-8350U (8) @ 3.600GHz 
-               ▟██████▙       ▜███▙               GPU: Intel UHD Graphics 620 
-              ▟███▛▜███▙       ▜███▙              Memory: 2641MiB / 15751MiB 
-             ▟███▛  ▜███▙       ▜███▙
-             ▝▀▀▀    ▀▀▀▀▘       ▀▀▀▘                                     
 
 ## lenx1ext
               ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖            giels@lenx1ext
