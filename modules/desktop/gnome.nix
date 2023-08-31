@@ -33,14 +33,14 @@
   home-manager = {
     users.giels = { pkgs, ... }: {
 
+      # find settings with command: dconf dump /
       dconf.settings = {
         "org/gnome/shell" = {
           favorite-apps = [
-            "org.gnome.Settings.desktop"
-            "Alacritty.desktop"
             "firefox.desktop"
+            "org.wezfurlong.wezterm.desktop"
             "org.gnome.Nautilus.desktop"
-            "org.remmina.Remmina.desktop"
+            "org.gnome.Settings.desktop"
             "virt-manager.desktop"
           ];
           disable-user-extensions = false;
@@ -66,6 +66,14 @@
           tap-to-click = true;
           two-finger-scrolling-enabled = true;
         };
+        "org/gnome/nautilus/preferences" = {
+          default-folder-viewer = "list-view";
+          search-filter-time-type = "last_modified";
+          search-view = "list-view";
+          show-create-link = true;
+          show-delete-permanently = true;
+        };
+        "org/gnome/nautilus/list-view" = { default-zoom-level = "small"; };
       };
 
     };
