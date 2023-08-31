@@ -2,9 +2,9 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     ./home.nix
-    mixins-soundpipewire
-    packages-systemminimal
-    packages-userminimal
+    mixins-sound_pipewire
+    packages-system_minimal
+    packages-user_minimal
     # choose desktop: xfce, kde or gnome
     # desktop-gnome
     # desktop-kde
@@ -63,27 +63,7 @@
 
   services = {
     thermald.enable = true;
-    #    tlp = {
-    #      enable = true;
-    #      settings = {
-    #        PCIE_ASPM_ON_BAT = "powersupersave";
-    #        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    #        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-    #        CPU_MAX_PERF_ON_AC = "100";
-    #        CPU_MAX_PERF_ON_BAT = "30";
-    #        STOP_CHARGE_THRESH_BAT1 = "95";
-    #        STOP_CHARGE_THRESH_BAT0 = "95";
-    #      };
-    #    };
-
-    # Enable the X11 windowing system.
-    xserver = {
-      enable = true;
-      # Configure keymap in X11
-      layout = "us";
-      xkbVariant = "euro";
     };
-
   };
 
   # Enable CUPS to print documents.
@@ -107,23 +87,6 @@
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
   };
-
-  #  # Enable sound with pipewire.
-  #  sound.enable = true;
-  #  hardware.pulseaudio.enable = false;
-  #  security.rtkit.enable = true;
-  #  services.pipewire = {
-  #    enable = true;
-  #    alsa.enable = true;
-  #    alsa.support32Bit = true;
-  #    pulse.enable = true;
-  #    # If you want to use JACK applications, uncomment this
-  #    #jack.enable = true;
-  #
-  #    # use the example session manager (no others are packaged yet so this is enabled by default,
-  #    # no need to redefine it in your config for now)
-  #    #media-session.enable = true;
-  #  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

@@ -2,10 +2,10 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     ./home.nix
-    mixins-soundpipewire
+    mixins-sound_pipewire
     mixins-xserver_keyboard_touchpad
-    packages-systemminimal
-    packages-userminimal
+    packages-system_minimal
+    packages-user_minimal
     # choose desktop: xfce, kde or gnome
     # desktop-gnome
     # desktop-kde
