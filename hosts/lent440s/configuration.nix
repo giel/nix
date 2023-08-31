@@ -11,7 +11,7 @@
     # desktop-gnome
     # desktop-kde
     # desktop-xfce
-    desktop-xfce
+    desktop-i3_xfce
     mixins-openssh
   ];
 
