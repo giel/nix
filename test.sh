@@ -1,4 +1,4 @@
-echo switching for host: $HOSTNAME
+echo testing for host: $HOSTNAME
 
 untracked_count=$(git clean -n | wc -l)
 if [ "$untracked_count" -gt 0 ]; then
