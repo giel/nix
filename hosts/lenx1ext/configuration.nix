@@ -7,12 +7,12 @@
     mixins-sound_pipewire
     packages-system_minimal
     packages-user_minimal
-    # choose desktop: xfce, kde or gnome
+    # choose desktop: budgie, gnome, kde or xfce
+    # desktop-budgie
     # desktop-gnome
     # desktop-kde
     # desktop-xfce
-    # desktop-budgie
-    desktop-budgie
+    desktop-gnome
     mixins-openssh
   ];
   # enable some experimental features
