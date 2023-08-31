@@ -7,14 +7,11 @@
     mixins-sound_pipewire
     packages-system_minimal
     packages-user_minimal
-    # choose desktop: budgie, gnome, kde or xfce
-    # desktop-budgie
-    # desktop-gnome
-    # desktop-kde
-    # desktop-xfce
-    desktop-gnome
+    # choose desktop: see ../../modules/desktop/ 
+    desktop-kde
     mixins-openssh
   ];
+
   # enable some experimental features
   # https://nixos.org/manual/nix/stable/command-ref/conf-file#conf-experimental-features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

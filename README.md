@@ -73,8 +73,9 @@ To **add a machine**:
 - create a new folder in `hosts` named after the machine named
 - copy initial `configuration.nix` and `hardware-configuration.nix` into this folder
 - make sure the configuration in the flake points to the new `configuration.nix`
-- add new files to git, else you may get errors (**important**)
+- add new files to git, else you may get errors (**important**, the scripts now also check this and issue a warning)
 - notice that the `imports` is done with nixosModules
+- choose a desktop from the [modules/desktop](./modules/desktop)
 - `./build.sh` to check the syntax and see if it can build
 - `./test.sh` to build and test the configuration. New applications are available after a successful test.
 - use `./fmt.sh` to format all nix files

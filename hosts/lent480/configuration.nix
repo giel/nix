@@ -7,11 +7,8 @@
     mixins-xserver_keyboard_touchpad
     packages-system_minimal
     packages-user_minimal
-    # choose desktop: xfce, kde or gnome
-    # desktop-gnome
-    # desktop-kde
-    # desktop-xfce
-    desktop-kde
+    # choose desktop: see ../../modules/desktop/ 
+    desktop-gnome
     mixins-openssh
   ];
 
