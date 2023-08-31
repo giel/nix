@@ -56,8 +56,8 @@
           clock-show-weekday = true;
           font-antialiasing = "grayscale";
           font-hinting = "slight";
-          cursor-theme="Adwaita"
-          icon-theme="Adwaita"
+          cursor-theme="Adwaita";
+          icon-theme="Adwaita";
         };
         "org/gnome/desktop/wm/preferences" = {
           button-layout = "appmenu:minimize,maximize,close";
