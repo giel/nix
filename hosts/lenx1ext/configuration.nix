@@ -1,7 +1,9 @@
 { config, pkgs, inputs, ... }: {
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
+    ./boot.nix
     ./home.nix
+    mixins-xserver_keyboard_touchpad
     mixins-sound_pipewire
     packages-system_minimal
     packages-user_minimal
@@ -15,13 +17,6 @@
   # enable some experimental features
   # https://nixos.org/manual/nix/stable/command-ref/conf-file#conf-experimental-features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Setup keyfile
-  boot.initrd.secrets = { "/crypto_keyfile.bin" = null; };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.giels = {
@@ -63,15 +58,12 @@
 
   services = {
     thermald.enable = true;
-    };
+    # Enable CUPS to print documents.
+    printing.enable = true;
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   console = {
     font = "Lat2-Terminus16";
-    # font = "Lat2-Terminus22";
     keyMap = "us";
   };
 
@@ -88,16 +80,10 @@
     ];
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   system.stateVersion = "23.05"; # Did you read the comment?
 
