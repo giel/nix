@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ./home.nix
     mixins-soundpipewire
+    mixins-xserver_keyboard_touchpad
     packages-systemminimal
     packages-userminimal
     # choose desktop: xfce, kde or gnome
@@ -36,14 +37,6 @@
   boot.initrd.luks.devices."luks-e1bc38e7-b4f0-44f7-9789-88087da29e15".keyFile =
     "/crypto_keyfile.bin";
 
-  #  nixpkgs.overlays = [
-  #    (self: super: {
-  #      sway-unwrapped = super.sway-unwrapped.override { stdenv = super.withCFlags [ "-funroll-loops" "-O3" "-march=x86-64-v3" ] super.llvmPackages_15.stdenv; };
-  #      kitty = super.kitty.override { stdenv = super.withCFlags [ "-funroll-loops" "-O3" "-march=x86-64-v3" ] super.llvmPackages_15.stdenv; };
-  #      nixUnstable = super.nixUnstable.override { stdenv = super.withCFlags [ "-funroll-loops" "-O3" "-march=x86-64-v3" ] super.llvmPackages_15.stdenv; };
-  #    })
-  #  ];
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.giels = {
     isNormalUser = true;
@@ -64,33 +57,10 @@
     networkmanager.enable = true;
   };
 
-  services = {
-    thermald.enable = true;
-    #    tlp = {
-    #      enable = true;
-    #      settings = {
-    #        PCIE_ASPM_ON_BAT = "powersupersave";
-    #        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-    #        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-    #        CPU_MAX_PERF_ON_AC = "100";
-    #        CPU_MAX_PERF_ON_BAT = "30";
-    #        STOP_CHARGE_THRESH_BAT1 = "95";
-    #        STOP_CHARGE_THRESH_BAT0 = "95";
-    #      };
-    #    };
+  services = { thermald.enable = true; };
 
-    # Enable the X11 windowing system.
-    xserver = {
-      enable = true;
-      # Configure keymap in X11
-      layout = "us";
-      xkbVariant = "euro";
-    };
-
-  };
-
-  # Enable the OpenSSH daemon.
-  #  openssh.enable = true; #via module/mixins/openssh
+  # Specific for xfce as it does not provide its own bluetooth manager
+  environment.systemPackages = with pkgs; [ blueman ];
 
   console = {
     font = "Lat2-Terminus16";
