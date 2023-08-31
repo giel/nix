@@ -11,7 +11,8 @@
     # desktop-gnome
     # desktop-kde
     # desktop-xfce
-    desktop-gnome
+    # desktop-budgie
+    desktop-budgie
     mixins-openssh
   ];
   # enable some experimental features
