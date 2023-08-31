@@ -90,6 +90,7 @@ To **add a machine**:
 - [Matthias Benaets nixos-config](https://github.com/MatthiasBenaets/nixos-config/)
 - [Nix starter configs](https://github.com/Misterio77/nix-starter-configs)
 - [NixOS Gnome settings and keyboard shortcuts](https://the-empire.systems/nixos-gnome-settings-and-keyboard-shortcuts)
+- [KDE settings with plasma manager](https://github.com/mcdonc/.nixconfig/blob/master/videos/plasma-manager/script.rst)
 
 # hardware
 See [README in hosts](./hosts/README.md).

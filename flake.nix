@@ -17,10 +17,17 @@
 
     utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
 
+    # KDE Plasma user settings
+    plasma-manager = {
+      # Add "inputs.plasma-manager.homeManagerModules.plasma-manager" to the home-manager.users.${user}.imports
+      url = "github:pjones/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, home-manager, nixpkgs, nixpkgs-unstable, nixos-hardware
-    , utils, ... }@inputs: {
+    , utils, plasma-manager, ... }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         lent440s = nixpkgs.lib.nixosSystem {
