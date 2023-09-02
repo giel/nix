@@ -16,7 +16,7 @@ Show result:
         nixos https://nixos.org/channels/nixos-23.05
         nixos-unstable https://channels.nixos.org/nixos-unstable
 
-A first `flake.nix` is generated, filled from several examples and only in use on Lenovo T480 for now.
+A first `flake.nix` is generated, and filled from several examples (see links below). Now I have it in use for my Lenovo Thinkpads.
 
 
 # NixOS / Nix commands
