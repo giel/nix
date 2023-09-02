@@ -8,7 +8,7 @@
     packages-system_minimal
     packages-user_minimal
     # choose desktop: see ../../modules/desktop/ 
-    desktop-kde
+    desktop-gnome
     mixins-openssh
   ];
 

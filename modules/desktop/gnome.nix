@@ -35,6 +35,36 @@
 
       # find settings with command: dconf dump /
       dconf.settings = {
+        "org/gnome/desktop/interface" = {
+          clock-show-weekday = true;
+          font-antialiasing = "grayscale";
+          font-hinting = "slight";
+          cursor-theme = "Adwaita";
+          icon-theme = "Adwaita";
+        };
+        "org/gnome/desktop/peripherals/touchpad" = {
+          tap-to-click = true;
+          two-finger-scrolling-enabled = true;
+        };
+        "org/gnome/desktop/wm/keybindings" = {
+          move-to-workspace-1 = [ "<Shift><Super>1" ];
+          move-to-workspace-2 = [ "<Shift><Super>2" ];
+          move-to-workspace-3 = [ "<Shift><Super>3" ];
+          move-to-workspace-4 = [ "<Shift><Super>4" ];
+          switch-to-workspace-1 = [ "<Super>1" ];
+          switch-to-workspace-2 = [ "<Super>2" ];
+          switch-to-workspace-3 = [ "<Super>3" ];
+          switch-to-workspace-4 = [ "<Super>4" ];
+          switch-to-application-1 = "@as []";
+          switch-to-application-2 = "@as []";
+          switch-to-application-3 = "@as []";
+          switch-to-application-4 = "@as []";
+        };
+        "org/gnome/desktop/wm/preferences" = {
+          button-layout = "appmenu:minimize,maximize,close";
+          resize-with-right-button = true;
+          num-workspaces = 4;
+        };
         "org/gnome/shell" = {
           favorite-apps = [
             "firefox.desktop"
@@ -52,22 +82,7 @@
             "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
           ];
         };
-        "org/gnome/desktop/interface" = {
-          clock-show-weekday = true;
-          font-antialiasing = "grayscale";
-          font-hinting = "slight";
-          cursor-theme = "Adwaita";
-          icon-theme = "Adwaita";
-        };
-        "org/gnome/desktop/wm/preferences" = {
-          button-layout = "appmenu:minimize,maximize,close";
-          resize-with-right-button = true;
-          num-workspaces = 4;
-        };
-        "org/gnome/desktop/peripherals/touchpad" = {
-          tap-to-click = true;
-          two-finger-scrolling-enabled = true;
-        };
+        "org/gnome/nautilus/list-view" = { default-zoom-level = "small"; };
         "org/gnome/nautilus/preferences" = {
           default-folder-viewer = "list-view";
           search-filter-time-type = "last_modified";
@@ -75,7 +90,7 @@
           show-create-link = true;
           show-delete-permanently = true;
         };
-        "org/gnome/nautilus/list-view" = { default-zoom-level = "small"; };
+
       };
 
     };
