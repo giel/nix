@@ -35,6 +35,11 @@
 
       # find settings with command: dconf dump /
       dconf.settings = {
+        "org/gnome/desktop/calendar" = { show-weekdate = true; };
+        "org/gnome/desktop/input-sources" = {
+          sources = [ "xkb" "us+euro" ];
+          xkb-options = [ "terminate:ctrl_alt_bksp" "caps:escape" ];
+        };
         "org/gnome/desktop/interface" = {
           clock-show-weekday = true;
           font-antialiasing = "grayscale";
@@ -65,6 +70,14 @@
           resize-with-right-button = true;
           num-workspaces = 4;
         };
+        "org/gnome/nautilus/list-view" = { default-zoom-level = "small"; };
+        "org/gnome/nautilus/preferences" = {
+          default-folder-viewer = "list-view";
+          search-filter-time-type = "last_modified";
+          search-view = "list-view";
+          show-create-link = true;
+          show-delete-permanently = true;
+        };
         "org/gnome/shell" = {
           favorite-apps = [
             "firefox.desktop"
@@ -82,15 +95,12 @@
             "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
           ];
         };
-        "org/gnome/nautilus/list-view" = { default-zoom-level = "small"; };
-        "org/gnome/nautilus/preferences" = {
-          default-folder-viewer = "list-view";
-          search-filter-time-type = "last_modified";
-          search-view = "list-view";
-          show-create-link = true;
-          show-delete-permanently = true;
+        "org/gnome/tweaks" = { show-extensions-notice = false; };
+        "org/gtk/gtk4/settings/file-chooser" = {
+          show-hidden = false;
+          sort-directories-first = true;
         };
-
+        "system/locale" = { region = "nl_NL.UTF-8"; };
       };
 
     };
