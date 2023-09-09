@@ -10,7 +10,7 @@
     packages-system_minimal
     packages-user_minimal
 
-    # choose desktop: 
+    # choose desktop: see ../../modules/desktop/ 
     # desktop-gnome
     # desktop-i3_xfce
     # desktop-kde

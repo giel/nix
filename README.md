@@ -16,7 +16,7 @@ Show result:
         nixos https://nixos.org/channels/nixos-23.05
         nixos-unstable https://channels.nixos.org/nixos-unstable
 
-A first `flake.nix` is generated, filled from several examples and only in use on Lenovo T480 for now.
+A first `flake.nix` is generated, and filled from several examples (see links below). Now I have it in use for my Lenovo Thinkpads.
 
 
 # NixOS / Nix commands
@@ -73,8 +73,9 @@ To **add a machine**:
 - create a new folder in `hosts` named after the machine named
 - copy initial `configuration.nix` and `hardware-configuration.nix` into this folder
 - make sure the configuration in the flake points to the new `configuration.nix`
-- add new files to git, else you may get errors (**important**)
+- add new files to git, else you may get errors (**important**, the scripts now also check this and issue a warning)
 - notice that the `imports` is done with nixosModules
+- choose a desktop from the [modules/desktop](./modules/desktop)
 - `./build.sh` to check the syntax and see if it can build
 - `./test.sh` to build and test the configuration. New applications are available after a successful test.
 - use `./fmt.sh` to format all nix files
@@ -88,7 +89,9 @@ To **add a machine**:
 - [Mathew Croughan nixcfg](https://github.com/MatthewCroughan/nixcfg)
 - [Matthias Benaets nixos-config](https://github.com/MatthiasBenaets/nixos-config/)
 - [Nix starter configs](https://github.com/Misterio77/nix-starter-configs)
+- [NixOS Gnome setting tutorial](https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/)
 - [NixOS Gnome settings and keyboard shortcuts](https://the-empire.systems/nixos-gnome-settings-and-keyboard-shortcuts)
+- [KDE settings with plasma manager](https://github.com/mcdonc/.nixconfig/blob/master/videos/plasma-manager/script.rst)
 
 # hardware
 See [README in hosts](./hosts/README.md).

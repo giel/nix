@@ -30,6 +30,7 @@
         nixfmt
         neovim
         nodejs_20
+        pcloud
         python39
         remmina
         ripgrep

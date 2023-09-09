@@ -8,16 +8,16 @@
       # Enable the i3 window manager via xfce Desktop Environment.
       displayManager.lightdm.enable = true;
 
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
+      desktopManager = {
+        xterm.enable = false;
+        xfce = {
+          enable = true;
+          noDesktop = true;
+          enableXfwm = false;
+        };
       };
-    };
-    displayManager.defaultSession = "xfce";
-    windowManager.i3.enable = true;
+      displayManager.defaultSession = "xfce";
+      windowManager.i3.enable = true;
     };
   };
 
