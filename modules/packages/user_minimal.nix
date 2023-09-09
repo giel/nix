@@ -14,6 +14,7 @@
         lazygit
         lf
         lsd
+        marksman
         openvpn
         starship
         ungoogled-chromium
