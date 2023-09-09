@@ -11,7 +11,6 @@
       layout = "us";
       xkbVariant = "euro";
       xkbOptions = "caps:escape";
-      # xkbVariant = "eurosign:e";
       libinput = {
         enable = true;
         touchpad = {

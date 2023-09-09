@@ -3,16 +3,19 @@
     ./hardware-configuration.nix
     ./boot.nix
     ./home.nix
+
+    mixins-openssh
     mixins-sound_pipewire
     mixins-xserver_keyboard_touchpad
     packages-system_minimal
     packages-user_minimal
-    # choose desktop: xfce, kde or gnome
+
+    # choose desktop: 
     # desktop-gnome
+    # desktop-i3_xfce
     # desktop-kde
     # desktop-xfce
-    desktop-i3_xfce
-    mixins-openssh
+    desktop-hyprland
   ];
 
   # enable some experimental features
