@@ -12,6 +12,7 @@
         fzf
         gitui
         lazygit
+        # unstable.lazygit
         lf
         lsd
         marksman
@@ -26,3 +27,4 @@
     };
   };
 }
+

@@ -3,13 +3,16 @@
     ./hardware-configuration.nix
     ./boot.nix
     ./home.nix
+
+    mixins-openssh
     mixins-sound_pipewire
     mixins-xserver_keyboard_touchpad
+
     packages-system_minimal
     packages-user_minimal
+
     # choose desktop: see ../../modules/desktop/ 
     desktop-gnome
-    mixins-openssh
   ];
 
   # enable some experimental features
@@ -30,6 +33,11 @@
     generateRegistryFromInputs = true;
     linkInputs = true;
   };
+
+  environment.systemPackages =  [
+    pkgs.cpufetch
+#   unstable-pkgs.cpufetch
+  ];  
 
   networking = {
     hostName = "lent480";
