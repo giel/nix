@@ -18,6 +18,7 @@
       font-awesome
       hyprland
       roboto
+      rofi
       toybox # for killall in restart waybar
       waybar
       wofi

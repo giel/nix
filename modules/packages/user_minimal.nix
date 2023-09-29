@@ -7,6 +7,7 @@
         _1password
         _1password-gui
         chezmoi
+        direnv
         fd
         firefox
         fzf

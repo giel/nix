@@ -13,6 +13,7 @@
 
     # choose desktop: see ../../modules/desktop/ 
     desktop-gnome
+    # desktop-hyprland
   ];
 
   # enable some experimental features
