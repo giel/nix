@@ -22,7 +22,6 @@
       toybox # for killall in restart waybar
       waybar
       wofi
-    # killall  # does not work in my scripts
     ];
   };
 

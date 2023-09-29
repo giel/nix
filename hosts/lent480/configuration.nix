@@ -12,8 +12,9 @@
     packages-user_minimal
 
     # choose desktop: see ../../modules/desktop/ 
-    desktop-gnome
-    # desktop-hyprland
+    # desktop-gnome
+    # desktop-kde
+    desktop-hyprland
   ];
 
   # enable some experimental features
