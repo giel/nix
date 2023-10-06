@@ -35,3 +35,41 @@ Switched to branch 'imac'
 ...
 
 
+[giels@nixos:~/git]$ eval "$(ssh-agent -s)"
+Agent pid 7385
+[giels@nixos:~/git]$ cd ~/.ssh/
+[giels@nixos:~/.ssh]$ chmod 600 id_rsa
+[giels@nixos:~/.ssh]$ chmod 600 id_rsa.pub 
+
+[giels@nixos:~/.ssh]$ cd ~/git
+[giels@nixos:~/git]$ ssh-add ~/.ssh/id_rsa
+Enter passphrase for /home/giels/.ssh/id_rsa: 
+Identity added: /home/giels/.ssh/id_rsa (giels@im4014)
+[giels@nixos:~/git]$ git clone git@github.com:giel/inst.git
+Cloning into 'inst'...
+....
+[giels@nixos:~/git]$ cd ~/git/nix/imac/
+
+
+[giels@nixos:~/git/nix/imac]$ sudo nano /etc/nixos/configuration.nix 
+....
+[giels@nixos:~/git/nix/imac]$ sudo nixos-rebuild test
+building Nix...
+building the system configuration...
+these 31 derivations will be built:
+  /nix/store/iz2zgv39x1nrzv8dnkmmrrxwpm6h2gd0-system-path.drv
+....
+
+[giels@nixos:~/git/nix/imac]$ sudo nixos-rebuild switch
+building Nix...
+building the system configuration...
+activating the configuration...
+....
+
+[giels@nixos:~/git/nix/imac]$ vim cpnix.sh 
+[giels@nixos:~/git/nix/imac]$ chmod +x cpnix.sh 
+[giels@nixos:~/git/nix/imac]$ ./cpnix.sh 
+~/git/nix/imac ~/git/nix/imac
+~/git/nix/imac
+[giels@nixos:~/git/nix/imac]$ lazygit
+

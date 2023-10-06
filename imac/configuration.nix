@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "im4014"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -86,6 +86,26 @@
     packages = with pkgs; [
       firefox
     #  thunderbird
+
+        _1password
+        _1password-gui
+        chezmoi
+        direnv
+        fd
+        firefox
+        fzf
+        gitui
+        lazygit
+        # unstable.lazygit
+        lf
+        lsd
+        marksman
+        openvpn
+        starship
+        ungoogled-chromium
+        unzip
+        wezterm
+        zsh
     ];
   };
 
@@ -97,6 +117,16 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    bluez
+    curl
+    file
+    git
+    git-lfs
+    neofetch
+    vim
+    wget
+    xclip
+    zsh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -106,6 +136,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  programs.zsh.enable = true;
 
   # List services that you want to enable:
 
