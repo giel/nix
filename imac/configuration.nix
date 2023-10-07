@@ -62,9 +62,6 @@
     xkbVariant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -105,6 +102,10 @@
         fzf
         gcc_multi # for neovim
         gitui
+        go
+        gopls
+        jetbrains.goland
+        jetbrains.rider
         lazygit
         # unstable.lazygit
         lf
@@ -114,6 +115,7 @@
         nodejs_18 # for neovim
         openvpn
         ripgrep # for neovim
+        slack
         starship
         ungoogled-chromium
         unzip
@@ -153,8 +155,29 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  # font Jetbrains does not seem to work with Alacritty
+  # Also sometimes a warning is issued to remove a file manually 
+  fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      font-awesome
+      inconsolata-nerdfont
+      jetbrains-mono
+      source-code-pro
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    ];
+  };
+
+
+  services = {
+    # Enable the OpenSSH daemon.
+    openssh.enable = true;
+    # Enable CUPS to print documents.
+    printing.enable = true;
+  };
+
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
