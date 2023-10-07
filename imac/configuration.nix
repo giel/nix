@@ -10,6 +10,13 @@
       ./hardware-configuration.nix
     ];
 
+  nix = {
+   package = pkgs.nixFlakes;
+   extraOptions = ''
+     experimental-features = nix-command flakes
+   '';
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -83,24 +90,30 @@
     isNormalUser = true;
     description = "giels";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       firefox
     #  thunderbird
 
         _1password
         _1password-gui
+        bcompare
         chezmoi
         direnv
-        fd
+        fd # for neovim
         firefox
         fzf
+        gcc_multi # for neovim
         gitui
         lazygit
         # unstable.lazygit
         lf
         lsd
-        marksman
+        marksman # for neovim
+        neovim
+        nodejs_18 # for neovim
         openvpn
+        ripgrep # for neovim
         starship
         ungoogled-chromium
         unzip

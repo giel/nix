@@ -86,6 +86,7 @@ To **add a machine**:
 
 - [Nix main site](https://nixos.org/)
 - [NixOS Wiki](https://nixos.wiki)
+- [NixOs --> Flakes](https://github.com/drakerossman/nixos-musings/tree/main/articles/how-to-convert-default-nixos-to-nixos-with-flakes)
 - [Mathew Croughan nixcfg](https://github.com/MatthewCroughan/nixcfg)
 - [Matthias Benaets nixos-config](https://github.com/MatthiasBenaets/nixos-config/)
 - [Nix starter configs](https://github.com/Misterio77/nix-starter-configs)

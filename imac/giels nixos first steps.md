@@ -73,3 +73,15 @@ activating the configuration...
 ~/git/nix/imac
 [giels@nixos:~/git/nix/imac]$ lazygit
 
+install nvim config
+install chezmoi config
+
+cleanup git: dotfiles-im4104
+
+[giels@im4014:~/git/inst]$ chezmoi apply
+
+added neovim, changed shell
+
+start changing to flake
+
+beyond compare working!
