@@ -7,6 +7,7 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./home.nix
   ];
 
   nix = {
@@ -87,40 +88,6 @@
     description = "giels";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      firefox
-      #  thunderbird
-
-      _1password
-      _1password-gui
-      bcompare
-      chezmoi
-      direnv
-      fd # for neovim
-      firefox
-      fzf
-      gcc_multi # for neovim
-      gitui
-      go
-      gopls
-      jetbrains.goland
-      jetbrains.rider
-      lazygit
-      # unstable.lazygit
-      lf
-      lsd
-      marksman # for neovim
-      neovim
-      nodejs_18 # for neovim
-      openvpn
-      ripgrep # for neovim
-      slack
-      starship
-      ungoogled-chromium
-      unzip
-      wezterm
-      zsh
-    ];
   };
 
   # Allow unfree packages
@@ -134,6 +101,7 @@
     bluez
     curl
     file
+    fortune
     git
     git-lfs
     neofetch

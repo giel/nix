@@ -36,10 +36,10 @@
     linkInputs = true;
   };
 
-  environment.systemPackages =  [
+  environment.systemPackages = [
     pkgs.cpufetch
-#   unstable-pkgs.cpufetch
-  ];  
+    #   unstable-pkgs.cpufetch
+  ];
 
   networking = {
     hostName = "lent480";
