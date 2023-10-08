@@ -5,16 +5,15 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   nix = {
-   package = pkgs.nixFlakes;
-   extraOptions = ''
-     experimental-features = nix-command flakes
-   '';
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
   };
 
   # Bootloader.
@@ -90,37 +89,37 @@
     shell = pkgs.zsh;
     packages = with pkgs; [
       firefox
-    #  thunderbird
+      #  thunderbird
 
-        _1password
-        _1password-gui
-        bcompare
-        chezmoi
-        direnv
-        fd # for neovim
-        firefox
-        fzf
-        gcc_multi # for neovim
-        gitui
-        go
-        gopls
-        jetbrains.goland
-        jetbrains.rider
-        lazygit
-        # unstable.lazygit
-        lf
-        lsd
-        marksman # for neovim
-        neovim
-        nodejs_18 # for neovim
-        openvpn
-        ripgrep # for neovim
-        slack
-        starship
-        ungoogled-chromium
-        unzip
-        wezterm
-        zsh
+      _1password
+      _1password-gui
+      bcompare
+      chezmoi
+      direnv
+      fd # for neovim
+      firefox
+      fzf
+      gcc_multi # for neovim
+      gitui
+      go
+      gopls
+      jetbrains.goland
+      jetbrains.rider
+      lazygit
+      # unstable.lazygit
+      lf
+      lsd
+      marksman # for neovim
+      neovim
+      nodejs_18 # for neovim
+      openvpn
+      ripgrep # for neovim
+      slack
+      starship
+      ungoogled-chromium
+      unzip
+      wezterm
+      zsh
     ];
   };
 
@@ -130,14 +129,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
     bluez
     curl
     file
     git
     git-lfs
     neofetch
+    nixfmt
     vim
     wget
     xclip
@@ -167,7 +167,6 @@
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
   };
-
 
   services = {
     # Enable the OpenSSH daemon.
