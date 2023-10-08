@@ -6,6 +6,7 @@
 
 {
   imports = [ # Include the results of the hardware scan.
+    ./boot.nix
     ./hardware-configuration.nix
     ./home.nix
   ];
@@ -16,10 +17,6 @@
       experimental-features = nix-command flakes
     '';
   };
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "im4014"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
