@@ -25,7 +25,7 @@
         jetbrains.goland
         jetbrains.rider
         lazygit
-        lf
+        # lf  used as a test for stable packages
         lsd
         marksman # for neovim
         meld

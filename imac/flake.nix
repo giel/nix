@@ -11,15 +11,24 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, ... }: {
+
     nixosConfigurations = {
       im4014 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules =
-          [ ./configuration.nix home-manager.nixosModules.home-manager ];
+        modules = [
+          {
+            nixpkgs.overlays = [
+              (import ./stable-overlay.nix {
+                nixpkgsStableSrc = nixpkgs-stable;
+              })
+            ];
+          }
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+        ];
       };
     };
   };

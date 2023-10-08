@@ -4,7 +4,8 @@
 
 { config, pkgs, ... }:
 
-{
+let stablePkgs = pkgs.stable;
+in {
   imports = [ # Include the results of the hardware scan.
     ./boot.nix
     ./hardware-configuration.nix
@@ -101,6 +102,7 @@
     fortune
     git
     git-lfs
+    stablePkgs.lf
     neofetch
     nixfmt
     vim
