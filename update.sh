@@ -1,3 +1,3 @@
-#!/bin/sh
-sudo nix-channel --list
-sudo nix-channel --update
+echo updating for all flake inputs
+
+sudo nix flake update

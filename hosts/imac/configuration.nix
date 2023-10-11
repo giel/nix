@@ -10,14 +10,14 @@ in {
     ./boot.nix
     ./hardware-configuration.nix
     ./home.nix
-     
-    ../modules/mixins/openssh.nix
-    ../modules/mixins/sound_pipewire.nix
+    
+    ../../modules/mixins/openssh.nix
+    ../../modules/mixins/sound_pipewire.nix
 
-    ../modules/packages/system_minimal.nix
-    ../modules/packages/user_minimal.nix
+    ../../modules/packages/system_minimal.nix
+    ../../modules/packages/user_minimal.nix
 
-    ../modules/desktop/gnome.nix
+    ../../modules/desktop/gnome.nix
   ];
 
   nix = {

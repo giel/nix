@@ -10,6 +10,7 @@
         direnv
         fd
         firefox
+        fortune
         fzf
         gitui
         lazygit

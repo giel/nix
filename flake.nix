@@ -3,15 +3,16 @@
 
   # All flake references used to build my NixOS setup. These are dependencies.
   inputs = {
-    # Default Stable Nix Packages
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    # Default Current stable Nix Packages
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
     # Unstable Nix Packages
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     # User Package Management
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -26,10 +27,24 @@
     };
   };
 
-  outputs = { self, home-manager, nixpkgs, nixpkgs-unstable, nixos-hardware
+  outputs = { self, home-manager, nixpkgs, nixpkgs-stable, nixos-hardware
     , utils, plasma-manager, ... }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
+        im4014 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            {
+              nixpkgs.overlays = [
+                (import ./hosts/imac/stable-overlay.nix {
+                  nixpkgsStableSrc = nixpkgs-stable;
+                })
+              ];
+            }
+            ./hosts/imac/configuration.nix
+            home-manager.nixosModules.home-manager
+          ];
+        };
         lent440s = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
