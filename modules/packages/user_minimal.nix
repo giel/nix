@@ -22,7 +22,6 @@
         ungoogled-chromium
         unzip
         wezterm
-        zsh
       ];
 
     };

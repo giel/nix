@@ -10,6 +10,12 @@ in {
     ./boot.nix
     ./hardware-configuration.nix
     ./home.nix
+     
+    ../modules/mixins/openssh.nix
+    ../modules/mixins/sound_pipewire.nix
+
+    ../modules/packages/system_minimal.nix
+    ../modules/packages/user_minimal.nix
   ];
 
   nix = {
@@ -60,23 +66,6 @@ in {
     xkbVariant = "";
   };
 
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -94,21 +83,9 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-    bluez
-    curl
-    file
-    fortune
-    git
-    git-lfs
+    # temporarily use this one for stable packages
+    # use system_minimal.nix instead
     stablePkgs.lf
-    neofetch
-    nixfmt
-    vim
-    wget
-    xclip
-    zsh
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -118,7 +95,6 @@ in {
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  programs.zsh.enable = true;
 
   # List services that you want to enable:
 
@@ -136,8 +112,6 @@ in {
   };
 
   services = {
-    # Enable the OpenSSH daemon.
-    openssh.enable = true;
     # Enable CUPS to print documents.
     printing.enable = true;
   };
