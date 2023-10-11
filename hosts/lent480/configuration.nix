@@ -13,8 +13,8 @@
 
     # choose desktop: see ../../modules/desktop/ 
     # desktop-gnome
-    # desktop-kde
-    desktop-hyprland
+    desktop-kde
+    # desktop-hyprland
   ];
 
   # enable some experimental features
@@ -63,7 +63,7 @@
   # Also sometimes a warning is issued to remove a file manually 
   fonts = {
     fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       font-awesome
       inconsolata-nerdfont
       jetbrains-mono

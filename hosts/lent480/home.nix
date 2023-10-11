@@ -9,6 +9,7 @@
         alacritty
         awesome
         bat
+        bcompare
         dotnet-sdk
         fortune
         gcc_multi
