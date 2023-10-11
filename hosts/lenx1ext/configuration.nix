@@ -3,13 +3,15 @@
     ./hardware-configuration.nix
     ./boot.nix
     ./home.nix
-    mixins-xserver_keyboard_touchpad
+
+    mixins-openssh
     mixins-sound_pipewire
+    mixins-xserver_keyboard_touchpad
+
     packages-system_minimal
     packages-user_minimal
     # choose desktop: see ../../modules/desktop/ 
-    desktop-gnome
-    mixins-openssh
+    desktop-kde
   ];
 
   # enable some experimental features
