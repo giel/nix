@@ -19,7 +19,6 @@ in {
         jetbrains.goland
         jetbrains.rider
         meld
-        nixfmt
         neovim
         nodejs_20
         python39
