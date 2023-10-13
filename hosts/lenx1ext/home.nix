@@ -30,7 +30,6 @@ in {
         jetbrains.rider
         meld
         neovim
-        nixfmt
         nodejs_20
         pcloud
         python39

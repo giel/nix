@@ -9,6 +9,7 @@
     git
     git-lfs
     neofetch
+    nixfmt
     vim
     wget
     xclip

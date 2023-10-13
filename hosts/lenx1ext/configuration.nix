@@ -22,6 +22,19 @@ in {
   # https://nixos.org/manual/nix/stable/command-ref/conf-file#conf-experimental-features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  nix = {
+    # From flake-utils-plus
+    generateNixPathFromInputs = true;
+    generateRegistryFromInputs = true;
+    linkInputs = true;
+  };
+
+  # networking
+  networking = {
+    hostName = "lenx1ext";
+    networkmanager.enable = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.giels = {
     isNormalUser = true;
@@ -30,17 +43,8 @@ in {
     shell = pkgs.zsh;
   };
 
-  nix = {
-    # From flake-utils-plus
-    generateNixPathFromInputs = true;
-    generateRegistryFromInputs = true;
-    linkInputs = true;
-  };
-
-  networking = {
-    hostName = "lenx1ext";
-    networkmanager.enable = true;
-  };
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -58,12 +62,6 @@ in {
     LC_PAPER = "nl_NL.UTF-8";
     LC_TELEPHONE = "nl_NL.UTF-8";
     LC_TIME = "nl_NL.UTF-8";
-  };
-
-  services = {
-    thermald.enable = true;
-    # Enable CUPS to print documents.
-    printing.enable = true;
   };
 
   console = {
@@ -84,13 +82,14 @@ in {
     ];
   };
 
+  services = {
+    thermald.enable = true;
+    # Enable CUPS to print documents.
+    printing.enable = true;
+  };
+
   # Enable bluetooth
   hardware.bluetooth.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  programs.zsh.enable = true;
 
   system.stateVersion = "23.05"; # Did you read the comment?
 

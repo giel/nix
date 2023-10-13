@@ -17,9 +17,10 @@ in {
     ../../modules/packages/system_minimal.nix
     ../../modules/packages/user_minimal.nix
 
-    ../../modules/desktop/hyprland.nix
+    ../../modules/desktop/gnome.nix
   ];
 
+  # enable some experimental features
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
@@ -27,15 +28,23 @@ in {
     '';
   };
 
-  networking.hostName = "im4014"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking
+  networking = {
+    hostName = "im4014";
+    networkmanager.enable = true;
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.giels = {
+    isNormalUser = true;
+    description = "Giel Scharff";
+    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
+  };
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -55,28 +64,8 @@ in {
     LC_TIME = "nl_NL.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.giels = {
-    isNormalUser = true;
-    description = "giels";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -86,16 +75,6 @@ in {
       # use system_minimal.nix instead
       stablePkgs.lf
     ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
 
   # font Jetbrains does not seem to work with Alacritty
   # Also sometimes a warning is issued to remove a file manually 
@@ -118,18 +97,6 @@ in {
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 
 }
