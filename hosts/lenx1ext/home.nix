@@ -22,12 +22,15 @@ in {
         bat
         bcompare
         dotnet-sdk
+        drawio
         fortune
         gcc_multi
         go
         gopls
+        inkscape-with-extensions
         jetbrains.goland
         jetbrains.rider
+        libreoffice
         meld
         neovim
         nodejs_20
