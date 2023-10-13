@@ -1,13 +1,6 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-
-  services = {
-    # displayManager.gdm.enable = true;
-    # displayManager.ssdm.enable = true;
-    # displayManager.defaultSession = "xfce";
-  };
-
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
 
@@ -24,6 +17,8 @@
       wofi
     ];
   };
+
+# todo system tray / taskbar for wifi
 
   # Enable dconf for programs that might need it
   programs.dconf.enable = true;

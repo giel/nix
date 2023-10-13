@@ -17,7 +17,7 @@ in {
     ../../modules/packages/system_minimal.nix
     ../../modules/packages/user_minimal.nix
 
-    ../../modules/desktop/gnome.nix
+    ../../modules/desktop/hyprland.nix
   ];
 
   nix = {
