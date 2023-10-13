@@ -1,4 +1,14 @@
-echo garbage collecting
+# do nothing but start with sudo
+sudo echo ====
+numberToKeep=10
+echo garbage collecting: keep $numberToKeep minimal
 
-#sudo nix-collect-garbage --delete-older-than 30d --dry-run
-sudo nix-collect-garbage --delete-older-than 30d
+echo generations present:
+sudo nix-env -p /nix/var/nix/profiles/system --list-generations
+generations_to_delete=$(sudo nix-env -p /nix/var/nix/profiles/system --list-generations | head -n -$numberToKeep | awk '{print $1}')
+
+echo deleting...
+sudo nix-env --delete-generations +$numberToKeep
+
+echo garbage collect...
+sudo nix-store --gc
