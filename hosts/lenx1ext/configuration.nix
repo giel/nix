@@ -1,7 +1,11 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, ... }:
+
+let stablePkgs = pkgs.stable;
+in {
   imports = with inputs.self.nixosModules; [
-    ./hardware-configuration.nix
     ./boot.nix
+    # ./graphics.nix
+    ./hardware-configuration.nix
     ./home.nix
 
     mixins-openssh

@@ -27,8 +27,8 @@
     };
   };
 
-  outputs = { self, home-manager, nixpkgs, nixpkgs-stable, nixos-hardware
-    , utils, plasma-manager, ... }@inputs: {
+  outputs = { self, home-manager, nixpkgs, nixpkgs-stable, nixos-hardware, utils
+    , plasma-manager, ... }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         im4014 = nixpkgs.lib.nixosSystem {
@@ -36,7 +36,7 @@
           modules = [
             {
               nixpkgs.overlays = [
-                (import ./hosts/imac/stable-overlay.nix {
+                (import ./overlays/stable-overlay.nix {
                   nixpkgsStableSrc = nixpkgs-stable;
                 })
               ];
@@ -72,6 +72,13 @@
         lenx1ext = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            {
+              nixpkgs.overlays = [
+                (import ./overlays/stable-overlay.nix {
+                  nixpkgsStableSrc = nixpkgs-stable;
+                })
+              ];
+            }
             ./hosts/lenx1ext/configuration.nix
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager

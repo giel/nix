@@ -23,7 +23,7 @@ A first `flake.nix` is generated, and filled from several examples (see links be
 
 ### sample commands
 
-usually with `sudo`:
+usually with `sudo` (and not applicable for current flake config):
 
      nixos-rebuild build
      nixos-rebuild test
@@ -42,6 +42,9 @@ flake commands
      sudo nixos-rebuild switch --flake <config path>#<host>
      sudo nixos-rebuild switch --flake .#lent480
      sudo nixos-rebuild switch --flake ~/github/dotfiles-lent480/#lent480
+
+     nix run nixpkgs#htop
+
 
 **see `.sh` scripts for easy use.**
 

@@ -10,7 +10,7 @@ in {
     ./boot.nix
     ./hardware-configuration.nix
     ./home.nix
-    
+
     ../../modules/mixins/openssh.nix
     ../../modules/mixins/sound_pipewire.nix
 
@@ -80,11 +80,12 @@ in {
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    # temporarily use this one for stable packages
-    # use system_minimal.nix instead
-    stablePkgs.lf
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      # temporarily use this one for stable packages
+      # use system_minimal.nix instead
+      stablePkgs.lf
+    ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

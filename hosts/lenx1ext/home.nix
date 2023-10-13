@@ -1,6 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 
-{
+let stablePkgs = pkgs.stable;
+in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -28,15 +29,15 @@
         jetbrains.goland
         jetbrains.rider
         meld
-        nixfmt
         neovim
+        nixfmt
         nodejs_20
         pcloud
         python39
         remmina
         ripgrep
+        stablePkgs.lf
         stylua
-        # bcompare  # gives a sha2 error
         # sublime4  # seems to use open-ssl 1.1 that is end of life
         # thunderbird
       ];
