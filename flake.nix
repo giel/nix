@@ -60,6 +60,13 @@
         lent480 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+            {
+              nixpkgs.overlays = [
+                (import ./overlays/stable-overlay.nix {
+                  nixpkgsStableSrc = nixpkgs-stable;
+                })
+              ];
+            }
             ./hosts/lent480/configuration.nix
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager

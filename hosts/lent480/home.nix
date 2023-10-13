@@ -1,6 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 
-{
+let stablePkgs = pkgs.stable;
+in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -25,7 +26,6 @@
         remmina
         ripgrep
         stylua
-        # bcompare  # gives a sha2 error
         # sublime4  # seems to use open-ssl 1.1 that is end of life
         # thunderbird
       ];
