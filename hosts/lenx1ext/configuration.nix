@@ -4,7 +4,7 @@ let stablePkgs = pkgs.stable;
 in {
   imports = with inputs.self.nixosModules; [
     ./boot.nix
-    # ./graphics.nix
+    ./graphics.nix
     ./hardware-configuration.nix
     ./home.nix
 
