@@ -87,6 +87,7 @@
             "firefox.desktop"
             "org.wezfurlong.wezterm.desktop"
             "org.gnome.Nautilus.desktop"
+            "1password.desktop"
             "org.gnome.Settings.desktop"
             "virt-manager.desktop"
           ];

@@ -10,6 +10,7 @@
 
     packages-system_minimal
     packages-user_minimal
+    packages-vm
 
     # choose desktop: see ../../modules/desktop/ 
     desktop-gnome
