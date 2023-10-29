@@ -8,7 +8,7 @@ sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 generations_to_delete=$(sudo nix-env -p /nix/var/nix/profiles/system --list-generations | head -n -$numberToKeep | awk '{print $1}')
 
 echo deleting...
-sudo nix-env --delete-generations +$numberToKeep
+sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +$numberToKeep
 
 echo garbage collect...
 sudo nix-store --gc
