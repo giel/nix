@@ -39,6 +39,7 @@
 
       # find settings with command: dconf dump /
       dconf.settings = {
+        "org/gnome/desktop/a11y/keyboard" = { mousekeys-enable = false; };
         "org/gnome/desktop/calendar" = { show-weekdate = true; };
         "org/gnome/desktop/input-sources" = {
           sources = [ "xkb" "us+euro" ];
@@ -50,6 +51,7 @@
           font-hinting = "slight";
           cursor-theme = "Adwaita";
           icon-theme = "Adwaita";
+          locate-pointer = true;
         };
         "org/gnome/desktop/peripherals/touchpad" = {
           tap-to-click = true;
