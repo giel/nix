@@ -12,6 +12,7 @@
         automake  # for neovim
         bat
         bcompare
+        bottles
         cmake  # for neovim
         gcc_multi # for neovim
         gnumake  # for neovim
@@ -29,6 +30,7 @@
         remmina
         ripgrep # for neovim
         slack
+        steam
         ungoogled-chromium
         unzip
         wezterm
@@ -37,4 +39,6 @@
       home.stateVersion = "23.05";
     };
   };
+
+  programs.steam.enable = true;
 }
