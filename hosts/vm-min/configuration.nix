@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -28,11 +27,11 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-#  console = {
-#    font = "Lat2-Terminus16";
-#    keyMap = "us";
-#  #   useXkbConfig = true; # use xkbOptions in tty.
-#  };
+  #  console = {
+  #    font = "Lat2-Terminus16";
+  #    keyMap = "us";
+  #  #   useXkbConfig = true; # use xkbOptions in tty.
+  #  };
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
@@ -53,16 +52,20 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.giels = {
-     isNormalUser = true;
-     description = "Giel Scharff";
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-     shell = pkgs.zsh;
-     packages = with pkgs; [
-  #      chezmoi
-        starship
-  #     firefox
-  #     tree
-     ];
+    isNormalUser = true;
+    description = "Giel Scharff";
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.zsh;
+    packages = with pkgs; [
+      chezmoi
+      fortune
+      fzf
+      lazygit
+      lsd
+      starship
+      #     firefox
+      #     tree
+    ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -72,8 +75,9 @@
     git
     neofetch
     neovim
+    nixfmt
     # rabbitmq-server 
-    vim 
+    vim
     wget
     zsh
   ];
