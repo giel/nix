@@ -13,6 +13,7 @@
         bat
         bcompare
         bottles
+        brave
         cmake  # for neovim
         gcc_multi # for neovim
         gnumake  # for neovim
