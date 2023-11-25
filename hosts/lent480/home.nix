@@ -11,6 +11,7 @@ in {
         awesome
         bat
         bcompare
+        brave
         dotnet-sdk
         drawio
         fortune
