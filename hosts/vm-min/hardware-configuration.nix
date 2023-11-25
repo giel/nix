@@ -6,24 +6,24 @@
 {
   imports = [ ];
 
-  boot.initrd.availableKernelModules = [ "virtio_pci" "xhci_pci" "usb_storage" "usbhid" ];
+  boot.initrd.availableKernelModules =
+    [ "virtio_pci" "xhci_pci" "usb_storage" "usbhid" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3c8e8904-469e-4ddb-851b-0b322876309c";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/3c8e8904-469e-4ddb-851b-0b322876309c";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7796-1B3C";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/7796-1B3C";
+    fsType = "vfat";
+  };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/35c7e4e0-f68c-4988-bcec-9c976d398a91"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/35c7e4e0-f68c-4988-bcec-9c976d398a91"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

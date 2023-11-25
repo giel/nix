@@ -9,20 +9,20 @@
         # sublime4  # seems to use open-ssl 1.1 that is end of life
         # thunderbird
         alacritty
-        automake  # for neovim
+        automake # for neovim
         bat
         bcompare
         bottles
         brave
-        cmake  # for neovim
+        cmake # for neovim
         gcc_multi # for neovim
-        gnumake  # for neovim
+        gnumake # for neovim
         go
         gopls
-        jetbrains.goland	
+        jetbrains.goland
         jetbrains.rider
         # lf  used as a test for stable packages
-        lua54Packages.busted  # for neovim
+        lua54Packages.busted # for neovim
         lua54Packages.luarocks # for neovim
         meld
         neovim

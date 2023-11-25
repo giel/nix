@@ -2,6 +2,8 @@
 
 {
 
+  # Virtual Machine Manager
+
   # Enable dconf (System Management Tool)
   programs.dconf.enable = true;
 
