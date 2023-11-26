@@ -16,6 +16,7 @@ in {
 
     ../../modules/packages/system_minimal.nix
     ../../modules/packages/user_minimal.nix
+    ../../modules/packages/neovim.nix
 
     ../../modules/desktop/gnome.nix
   ];
