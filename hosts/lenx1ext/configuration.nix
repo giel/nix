@@ -14,6 +14,8 @@ in {
 
     packages-system_minimal
     packages-user_minimal
+    ../../modules/packages/neovim.nix
+
     # choose desktop: see ../../modules/desktop/ 
     desktop-kde
   ];
