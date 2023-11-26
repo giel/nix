@@ -11,6 +11,7 @@
     packages-system_minimal
     packages-user_minimal
     packages-vm
+    ../../modules/packages/neovim.nix
 
     # choose desktop: see ../../modules/desktop/ 
     desktop-gnome

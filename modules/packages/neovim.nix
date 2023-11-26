@@ -13,6 +13,7 @@
     neovim
     nodejs_18
     ripgrep
+    stylua
   ];
 
 }
