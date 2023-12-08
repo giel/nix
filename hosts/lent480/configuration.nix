@@ -4,17 +4,17 @@
     ./boot.nix
     ./home.nix
 
-    mixins-openssh
-    mixins-sound_pipewire
-    mixins-xserver_keyboard_touchpad
+    ../../modules/mixins/openssh.nix
+    ../../modules/mixins/sound_pipewire.nix
+    ../../modules/mixins/xserver_keyboard_touchpad.nix
 
-    packages-system_minimal
-    packages-user_minimal
-    packages-vm
+    ../../modules/packages/system_minimal.nix
+    ../../modules/packages/user_minimal.nix
+    ../../modules/packages/vm.nix
     ../../modules/packages/neovim.nix
 
     # choose desktop: see ../../modules/desktop/ 
-    desktop-gnome
+    ../../modules/desktop/gnome.nix
     # desktop-kde
     # desktop-hyprland
   ];
@@ -106,6 +106,6 @@
   # only needed for sublime4:
   # nixpkgs.config.permittedInsecurePackages = [ "openssl-1.1.1w" ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }
 

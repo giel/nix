@@ -86,7 +86,7 @@
         };
         "org/gnome/shell" = {
           favorite-apps = [
-            "firefox.desktop"
+            "brave-browser.desktop"
             "org.wezfurlong.wezterm.desktop"
             "org.gnome.Nautilus.desktop"
             "1password.desktop"
