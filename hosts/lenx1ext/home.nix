@@ -36,10 +36,10 @@ in {
         remmina
         stablePkgs.lf
         # sublime4  # seems to use open-ssl 1.1 that is end of life
-        # thunderbird
+        thunderbird
       ];
 
-      home.stateVersion = "23.05";
+      home.stateVersion = "23.11";
     };
   };
 }

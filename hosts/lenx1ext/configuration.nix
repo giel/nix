@@ -8,16 +8,16 @@ in {
     ./hardware-configuration.nix
     ./home.nix
 
-    mixins-openssh
-    mixins-sound_pipewire
-    mixins-xserver_keyboard_touchpad
+    ../../modules/mixins/openssh.nix
+    ../../modules/mixins/sound_pipewire.nix
+    ../../modules/mixins/xserver_keyboard_touchpad.nix
 
-    packages-system_minimal
-    packages-user_minimal
+    ../../modules/packages/system_minimal.nix
+    ../../modules/packages/user_minimal.nix
     ../../modules/packages/neovim.nix
 
     # choose desktop: see ../../modules/desktop/ 
-    desktop-kde
+    ../../modules/desktop/kde.nix
   ];
 
   # enable some experimental features
@@ -93,6 +93,6 @@ in {
   # Enable bluetooth
   hardware.bluetooth.enable = true;
 
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
