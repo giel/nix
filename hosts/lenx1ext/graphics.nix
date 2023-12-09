@@ -60,10 +60,4 @@
   #     nvidiaBusId = "PCI:1:0:0";
   #   };
   # 
-  home-manager = {
-    users.giels = { pkgs, ... }: {
-      home.packages = with pkgs; [ clinfo glxinfo lshw vulkan-tools ];
-
-    };
-  };
 }

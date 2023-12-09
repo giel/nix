@@ -13,12 +13,14 @@ in {
 
     ../../modules/mixins/openssh.nix
     ../../modules/mixins/sound_pipewire.nix
+    ../../modules/mixins/graphics-tools.nix
 
     ../../modules/packages/system_minimal.nix
     ../../modules/packages/user_minimal.nix
     ../../modules/packages/neovim.nix
 
     ../../modules/desktop/gnome.nix
+
   ];
 
   # enable some experimental features
@@ -28,6 +30,12 @@ in {
       experimental-features = nix-command flakes
     '';
   };
+
+  # graphic: AMD Radeon™ R9 200 Series
+  # code below is only needed for newer AMD cards
+  #  boot.initrd.kernelModules = [ "amdgpu" ];
+  #  services.xserver.enable = true;
+  #  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # networking
   networking = {
