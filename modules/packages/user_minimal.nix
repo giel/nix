@@ -14,6 +14,7 @@
         fortune
         fzf
         gitui
+        kitty
         lazygit
         lsd
         marksman

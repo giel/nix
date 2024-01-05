@@ -10,6 +10,7 @@
     git-lfs
     neofetch
     nixfmt
+    tmux
     vim
     wget
     xclip
