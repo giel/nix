@@ -21,6 +21,9 @@
       gnome.gnome-shell-extensions
       gnome.gnome-tweaks
       gnomeExtensions.appindicator
+# TODO find out how to confure
+#      gnomeExtensions.dash-to-dock
+#      gnomeExtensions.vitals
     ];
     # Gnome ignored packages
     gnome.excludePackages = (with pkgs; [ gnome-tour ]) ++ (with pkgs.gnome; [
@@ -96,6 +99,7 @@
           disable-user-extensions = false;
           disabled-extensions = "disabled";
           enabled-extensions = [
+# TODO some extentions do not work (not loaded?)
             "caffeine@patapon.info"
             "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
             "native-window-placement@gnome-shell-extensions.gcampax.github.com"
