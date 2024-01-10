@@ -18,7 +18,8 @@ in {
     ../../modules/packages/neovim.nix
 
     # choose desktop: see ../../modules/desktop/ 
-    ../../modules/desktop/kde.nix
+    # ../../modules/desktop/kde.nix
+    ../../modules/desktop/gnome.nix
   ];
 
   # enable some experimental features

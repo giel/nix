@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-
   environment.systemPackages = with pkgs; [
     automake
+    cargo # needed for nil (nix language server)
     cmake
     gcc_multi
     gnumake
