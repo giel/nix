@@ -18,7 +18,7 @@
         lazygit
         lsd
         marksman
-        openvpn
+        openfortivpn
         starship
         ungoogled-chromium
         unzip
@@ -27,5 +27,11 @@
 
     };
   };
+
+  programs = {
+    _1password.enable = true;
+    _1password-gui.enable = true;
+  };
+
 }
 

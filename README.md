@@ -84,6 +84,12 @@ To **add a machine**:
 - use `./fmt.sh` to format all nix files
 - `./switch.sh` to activate a new configuration. This will be the default in the startup of the machine.
 
+# 1Password
+1Password is enabled in the `user_minimal.nix` package. But before you can use the `op` cli tool you must enable it with:
+
+- 'Settings/General/ Keep 1Password in system tray'
+- 'Settings/Security/ Unlock using system authentication service'
+- 'Settings/Developer/Command-Line Interface/ Integrate with 1Password CLI'
 
 # links
 
