@@ -1,11 +1,14 @@
 { config, lib, pkgs, modulesPath, ... }:
 
+let pkgsStable = pkgs.stable;
+in
 {
   home-manager = {
     users.giels = { pkgs, ... }: {
       home.packages = with pkgs; [
         _1password
         _1password-gui
+        alacritty
         brave
         chezmoi
         direnv
@@ -18,20 +21,13 @@
         lazygit
         lsd
         marksman
-        openfortivpn
+        pkgsStable.lf
         starship
-        ungoogled-chromium
         unzip
         wezterm
       ];
 
     };
   };
-
-  programs = {
-    _1password.enable = true;
-    _1password-gui.enable = true;
-  };
-
 }
 
