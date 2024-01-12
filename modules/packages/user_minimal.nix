@@ -1,8 +1,6 @@
 { config, lib, pkgs, modulesPath, ... }:
-
-let pkgsStable = pkgs.stable;
-in
 {
+
   home-manager = {
     users.giels = { pkgs, ... }: {
       home.packages = with pkgs; [
@@ -21,13 +19,17 @@ in
         lazygit
         lsd
         marksman
-        pkgsStable.lf
+        lf
         starship
         unzip
         wezterm
       ];
-
     };
   };
-}
 
+  programs = {
+    _1password.enable = true;
+    _1password-gui.enable = true;
+  };
+
+}
