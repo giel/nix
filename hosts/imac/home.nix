@@ -12,20 +12,10 @@
         bat
         bcompare
         bottles
-        brave
-        go
-        gopls
-        jetbrains.goland
-        jetbrains.rider
-        # lf  used as a test for stable packages
         meld
         python39
-        remmina
         slack
         steam
-        ungoogled-chromium
-        unzip
-        wezterm
       ];
 
       home.stateVersion = "23.11";

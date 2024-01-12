@@ -7,8 +7,8 @@
 let stablePkgs = pkgs.stable;
 in {
   imports = [ # Include the results of the hardware scan.
-    ./boot.nix
     ./hardware-configuration.nix
+    ./boot.nix
     ./home.nix
 
     ../../modules/mixins/openssh.nix
@@ -19,8 +19,15 @@ in {
     ../../modules/packages/user_minimal.nix
     ../../modules/packages/neovim.nix
 
-    ../../modules/desktop/gnome.nix
+    ../../modules/packages/develop_go.nix
+    ../../modules/packages/develop_csharp.nix
 
+    ../../modules/packages/work.nix
+
+    # choose desktop: see ../../modules/desktop/ 
+    ../../modules/desktop/gnome.nix
+    # ../../modules/desktop/kde.nix
+    # ../../modules/desktop/hyprland.nix
   ];
 
   # enable some experimental features
@@ -44,6 +51,8 @@ in {
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   };
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.giels = {
     isNormalUser = true;
@@ -54,6 +63,8 @@ in {
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  system.stateVersion = "23.11"; # Did you read the comment?
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -71,6 +82,11 @@ in {
     LC_PAPER = "nl_NL.UTF-8";
     LC_TELEPHONE = "nl_NL.UTF-8";
     LC_TIME = "nl_NL.UTF-8";
+  };
+
+  services = {
+    # Enable CUPS to print documents.
+    printing.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -98,14 +114,6 @@ in {
     ];
   };
 
-  services = {
-    # Enable CUPS to print documents.
-    printing.enable = true;
-  };
 
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
-
-  system.stateVersion = "23.11"; # Did you read the comment?
 
 }
