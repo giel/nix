@@ -14,7 +14,6 @@
         bottles
         meld
         python39
-        slack
         steam
       ];
 
