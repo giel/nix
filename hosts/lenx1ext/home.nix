@@ -21,20 +21,13 @@ in {
         awesome
         bat
         bcompare
-        brave
-        dotnet-sdk
         drawio
-        fortune
-        go
         inkscape-with-extensions
-        jetbrains.goland
-        jetbrains.rider
         libreoffice
         meld
         pcloud
         python39
-        remmina
-        stablePkgs.lf
+        # stablePkgs.lf
         # sublime4  # seems to use open-ssl 1.1 that is end of life
         thunderbird
       ];
