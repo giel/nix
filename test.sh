@@ -5,5 +5,10 @@ if [ "$untracked_count" -gt 0 ]; then
 	echo "WARNING: You have untracked files!"
 fi
 
-sudo nixos-rebuild test --flake .#
-#sudo nixos-rebuild test --flake .# --show-trace
+if [ $# -eq 0 ]; then
+	# "No arguments provided."
+	sudo nixos-rebuild test --flake .#
+else
+	echo "Using trace (found argument $1)"
+	sudo nixos-rebuild test --flake .# --show-trace
+fi
