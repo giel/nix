@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-stable, pkgs-2305, modulesPath, ... }: {
+{ pkgs, pkgs-stable, pkgs-2305, ... }: {
 
   home-manager = {
     users.giels = { pkgs, ... }: {
