@@ -1,6 +1,4 @@
-# { config, lib, pkgs, modulesPath, ... }:
-
-{ config, pkgs, home-manager, ... }: {
+{ ... }: {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
