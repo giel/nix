@@ -29,8 +29,17 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, nixpkgs-2305, nixos-hardware
-    , home-manager, utils, plasma-manager, ... }@inputs:
+  outputs =
+    { self
+    , nixpkgs
+    , nixpkgs-stable
+    , nixpkgs-2305
+    , nixos-hardware
+    , home-manager
+    , utils
+    , plasma-manager
+    , ...
+    }@inputs:
     let
       system = "x86_64-linux";
       specialArgs = {
