@@ -66,7 +66,7 @@
     nixpkgs.config.allowUnfree = true;
 
     system.stateVersion = "23.11"; # Did you read the comment?
-    
+
     # Set your time zone.
     time.timeZone = "Europe/Amsterdam";
 
@@ -84,7 +84,7 @@
       LC_TELEPHONE = "nl_NL.UTF-8";
       LC_TIME = "nl_NL.UTF-8";
     };
-    
+
     services = {
       thermald.enable = true;
       # Enable CUPS to print documents.

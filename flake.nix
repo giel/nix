@@ -3,10 +3,12 @@
 
   # All flake references used to build my NixOS setup. These are dependencies.
   inputs = {
+    # Unstable Nix Packages - the packages we use by default
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # Default Current stable Nix Packages
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
-    # Unstable Nix Packages
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Older branch to use in other cases
+    nixpkgs-2305.url = "github:nixos/nixpkgs/nixos-23.05";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -27,26 +29,35 @@
     };
   };
 
-  outputs = { self, home-manager, nixpkgs, nixpkgs-stable, nixos-hardware, utils
-    , plasma-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-stable, nixpkgs-2305, nixos-hardware
+    , home-manager, utils, plasma-manager, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      specialArgs = {
+        pkgs-stable = import nixpkgs-stable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        pkgs-2305 = import nixpkgs-2305 {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        inherit nixos-hardware;
+        inherit system;
+        inherit inputs;
+      };
+    in {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         im4014 = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit specialArgs;
           modules = [
-            {
-              nixpkgs.overlays = [
-                (import ./overlays/stable-overlay.nix {
-                  nixpkgsStableSrc = nixpkgs-stable;
-                })
-              ];
-            }
             ./hosts/imac/configuration.nix
             home-manager.nixosModules.home-manager
           ];
         };
         lent440s = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit specialArgs;
           modules = [
             ./hosts/lent440s/configuration.nix
             utils.nixosModules.autoGenFromInputs
@@ -55,18 +66,10 @@
             nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
             nixos-hardware.nixosModules.common-gpu-intel
           ];
-          specialArgs = { inherit inputs; };
         };
         lent480 = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit specialArgs;
           modules = [
-            {
-              nixpkgs.overlays = [
-                (import ./overlays/stable-overlay.nix {
-                  nixpkgsStableSrc = nixpkgs-stable;
-                })
-              ];
-            }
             ./hosts/lent480/configuration.nix
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager
@@ -74,18 +77,10 @@
             nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
             nixos-hardware.nixosModules.common-gpu-intel
           ];
-          specialArgs = { inherit inputs; };
         };
         lenx1ext = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit specialArgs;
           modules = [
-            {
-              nixpkgs.overlays = [
-                (import ./overlays/stable-overlay.nix {
-                  nixpkgsStableSrc = nixpkgs-stable;
-                })
-              ];
-            }
             ./hosts/lenx1ext/configuration.nix
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager
@@ -93,7 +88,6 @@
             nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
             nixos-hardware.nixosModules.common-gpu-intel
           ];
-          specialArgs = { inherit inputs; };
         };
       };
     };

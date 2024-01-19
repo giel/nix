@@ -4,8 +4,7 @@
 
 { config, pkgs, ... }:
 
-let stablePkgs = pkgs.stable;
-in {
+{
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./boot.nix
@@ -94,12 +93,6 @@ in {
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs;
-    [
-      # temporarily use this one for stable packages
-      # use system_minimal.nix instead
-      stablePkgs.lf
-    ];
 
   # font Jetbrains does not seem to work with Alacritty
   # Also sometimes a warning is issued to remove a file manually 
@@ -113,7 +106,5 @@ in {
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
   };
-
-
 
 }

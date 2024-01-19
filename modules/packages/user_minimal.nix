@@ -1,5 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
-{
+{ config, lib, pkgs, pkgs-stable, pkgs-2305, modulesPath, ... }: {
 
   home-manager = {
     users.giels = { pkgs, ... }: {
@@ -19,7 +18,10 @@
         lazygit
         lsd
         marksman
-        lf
+        # lf can used for testing with different versions
+        # lf
+        # pkgs-stable.lf
+        pkgs-2305.lf
         starship
         unzip
         wezterm
