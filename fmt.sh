@@ -5,5 +5,6 @@ directory="/home/giels/git/nix"
 # Find and format .nix files
 find "$directory" -type f -name "*.nix" | while read -r file; do
 	echo "Formatting $file..."
-	nixfmt "$file"
+	# nixfmt "$file"
+	nix fmt "$file"
 done

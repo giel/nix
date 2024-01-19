@@ -46,7 +46,11 @@
         inherit system;
         inherit inputs;
       };
-    in {
+    in
+    {
+      # enable nix fmt command:
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         im4014 = nixpkgs.lib.nixosSystem {
