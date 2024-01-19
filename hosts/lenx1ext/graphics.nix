@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ ... }:
 
 {
   # My Nvidia card is the NVIDIA GeForce GTX 1050 Ti Mobile

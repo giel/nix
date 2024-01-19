@@ -1,6 +1,6 @@
-{ config, pkgs, inputs, ... }: {
+{ pkgs, ... }: {
 
-  imports = with inputs.self.nixosModules; [
+  imports = [
     ./hardware-configuration.nix
     ./graphics.nix
     ./boot.nix
