@@ -1,4 +1,18 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
+
+  options = {
+    my.desktopKDE.option = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+  };
+
+  # options = {
+  #   my.arbitrary.option = lib.mkOption {
+  #     type = lib.types.string;
+  #     default = "stuff";
+  #   };
+  # };
 
   imports = [
     ./hardware-configuration.nix
@@ -19,28 +33,26 @@
 
     ../../modules/packages/work.nix
 
-    # choose desktop set with KDE:
-    # ../../modules/desktop/kde.nix
-    # ../../modules/desktop/hyprland.nix
-    # ../../modules/desktop/i3_xfce.nix
-    # ../../modules/desktop/xfce.nix
-
-    # or choose desktop set with GNOME or Budgie:
-    # ../../modules/desktop/budgie.nix
-    ../../modules/desktop/gnome.nix
-    ../../modules/desktop/hyprland.nix
-
     # Login manager enables start of desktops above via login menu.
     # Also change to GDM or SSDM for GNOME or KDE in the login_manager:
     ../../modules/desktop/login_manager.nix
-  ];
+  ] ++
 
-  # options = {
-  #   my.arbitrary.option = lib.mkOption {
-  #     type = lib.types.string;
-  #     default = "stuff";
-  #   };
-  # };
+  # choose desktop set with KDE:
+  # [
+  #  ../../modules/desktop/kde.nix
+  #  ../../modules/desktop/hyprland.nix
+  #  ../../modules/desktop/i3_xfce.nix
+  #  ../../modules/desktop/xfce.nix
+  # ] ++
+
+  # or choose desktop set with GNOME or Budgie:
+  [
+    # ../../modules/desktop/budgie.nix
+    ../../modules/desktop/gnome.nix
+    ../../modules/desktop/hyprland.nix
+  ]
+  ;
 
   config = {
     # enable some experimental features
