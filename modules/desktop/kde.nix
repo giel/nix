@@ -8,7 +8,7 @@
       # Enable the X11 windowing system.
       enable = true;
       # Enable the KDE Plasma Desktop Environment.
-      displayManager.sddm.enable = true;
+      # displayManager.sddm.enable = true;
       desktopManager.plasma5 = { enable = true; };
       # keyboard settings: see mixins/xserver_keyboard.. file for configuration.nix
     };

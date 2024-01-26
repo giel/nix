@@ -8,7 +8,7 @@
       # Enable the X11 windowing system.
       enable = true;
       # Enable the GNOME Desktop Environment.
-      displayManager.gdm.enable = true;
+      # displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
       # keyboard settings: see mixins/xserver_keyboard.. file for configuration.nix
     };

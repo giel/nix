@@ -6,14 +6,14 @@
 
   # Enable the X11 windowing system.
   services.xserver = {
-  #  layout = "us";
-  #  xkbVariant = "";
-  #  enable = true;
-    displayManager.sddm = {
-      enable = true;
-      theme = "maya";
-      autoNumlock = true;
-    };
+    #  layout = "us";
+    #  xkbVariant = "";
+    #  enable = true;
+    # displayManager.sddm = {
+    #   enable = true;
+    #   theme = "maya";
+    #   autoNumlock = true;
+    # };
   };
 
   environment = {

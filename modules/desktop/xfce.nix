@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ ... }:
 
 {
 
@@ -6,7 +6,7 @@
     # Enable the X11 windowing system.
     xserver = {
       # Enable the xfce Desktop Environment.
-      displayManager.lightdm.enable = true;
+      # displayManager.lightdm.enable = true;
       desktopManager.xfce = { enable = true; };
     };
   };

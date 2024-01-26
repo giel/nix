@@ -6,7 +6,6 @@
     # Enable the X11 windowing system.
     xserver = {
       # Enable the i3 window manager via xfce Desktop Environment.
-      displayManager.lightdm.enable = true;
 
       desktopManager = {
         xterm.enable = false;
@@ -16,7 +15,7 @@
           enableXfwm = false;
         };
       };
-      displayManager.defaultSession = "xfce";
+      # displayManager.defaultSession = "xfce";
       windowManager.i3.enable = true;
     };
   };
