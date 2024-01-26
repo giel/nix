@@ -5,16 +5,16 @@
   programs.hyprland.xwayland.enable = true;
 
   # Enable the X11 windowing system.
-  #services.xserver = {
+  services.xserver = {
   #  layout = "us";
   #  xkbVariant = "";
   #  enable = true;
-  #  displayManager.sddm = {
-  #    enable = true;
-  #    theme = "maya";
-  #    autoNumlock = true;
-  #  };
-  #};
+    displayManager.sddm = {
+      enable = true;
+      theme = "maya";
+      autoNumlock = true;
+    };
+  };
 
   environment = {
     # extra Hyprland packages

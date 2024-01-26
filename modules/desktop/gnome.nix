@@ -6,10 +6,10 @@
     # Enable the X11 windowing system.
     xserver = {
       # Enable the X11 windowing system.
-      # enable = true;
+      enable = true;
       # Enable the GNOME Desktop Environment.
-      # displayManager.gdm.enable = true;
-      # desktopManager.gnome.enable = true;
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
       # keyboard settings: see mixins/xserver_keyboard.. file for configuration.nix
     };
   };

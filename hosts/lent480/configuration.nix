@@ -21,9 +21,11 @@
 
     # choose desktop: see ../../modules/desktop/ 
     ../../modules/desktop/gnome.nix
-    ../../modules/desktop/kde.nix
-    ../../modules/desktop/hyprland.nix
-    ../../modules/desktop/login_manager.nix
+    # ../../modules/desktop/kde.nix
+    # ../../modules/desktop/hyprland.nix
+
+    # meant as a drop in replacement for above, but not working for now.
+    # ../../modules/desktop/login_manager.nix
   ];
 
   # options = {
