@@ -13,3 +13,7 @@ Some usefull documentation regarding NixOS and Nix.
 - [NixOS Gnome settings and keyboard shortcuts](https://the-empire.systems/nixos-gnome-settings-and-keyboard-shortcuts)
 - [KDE settings with plasma manager](https://github.com/mcdonc/.nixconfig/blob/master/videos/plasma-manager/script.rst)
 
+- [How to enable wayland on NixOS](https://drakerossman.com/blog/wayland-on-nixos-confusion-conquest-triumph)
+- [Different ways to set up environment variables](https://drakerossman.com/blog/different-ways-to-set-up-environment-variables-in-nix)
+
+- [greetd a minimal login manager](https://nixos.wiki/wiki/Greetd)
