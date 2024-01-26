@@ -69,17 +69,6 @@
             home-manager.nixosModules.home-manager
           ];
         };
-        lent440s = nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          modules = [
-            ./hosts/lent440s/configuration.nix
-            utils.nixosModules.autoGenFromInputs
-            home-manager.nixosModules.home-manager
-            nixos-hardware.nixosModules.lenovo-thinkpad-t480
-            nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
-            nixos-hardware.nixosModules.common-gpu-intel
-          ];
-        };
         lent480 = nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           modules = [
