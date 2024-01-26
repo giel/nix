@@ -18,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
+    utils = { url = "github:gytis-ivaskevicius/flake-utils-plus/v1.4.0"; };
 
     # KDE Plasma user settings
     plasma-manager = {
