@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ ... }:
 
 {
 
@@ -6,8 +6,8 @@
     # Enable the X11 windowing system.
     xserver = {
       # Enable the budgie Desktop Environment.
-      displayManager.gdm.enable = true;
-      desktopManager.budgie = { enable = true; };
+      # displayManager.gdm.enable = true;
+      # desktopManager.budgie = { enable = true; };
     };
   };
 
