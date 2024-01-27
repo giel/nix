@@ -20,6 +20,7 @@
     # extra Hyprland packages
     systemPackages = with pkgs; [
       blueman
+      libsForQt5.dolphin
       font-awesome
       gnome.gnome-keyring
       hyprland
