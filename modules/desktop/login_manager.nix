@@ -1,5 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 # meant as a generic login manager
+let
+  isGdmNeeded = config.services.xserver.desktopManager.gnome.enable ||
+    config.services.xserver.desktopManager.budgie.enable;
+in
 {
   services = {
     # Enable the X11 windowing system.
@@ -12,12 +16,12 @@
       # - Hyprland
       # - xfce
       # - i3
-      # displayManager.sddm.enable = true;
+      displayManager.sddm.enable = !isGdmNeeded;
 
       # Enable the GNOME display manager for:
       # - GNOME Desktop Environment
       # - Budgie
-      displayManager.gdm.enable = true;
+      displayManager.gdm.enable = isGdmNeeded;
 
     };
   };
