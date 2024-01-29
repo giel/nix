@@ -42,6 +42,11 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      userSettings = {
+        user = "giels";
+        userName = "Giel Scharff";
+        timeZone = "Europe/Amsterdam";
+      };
       specialArgs = {
         pkgs-stable = import nixpkgs-stable {
           inherit system;
@@ -54,6 +59,7 @@
         inherit nixos-hardware;
         inherit system;
         inherit inputs;
+        inherit userSettings;
       };
     in
     {

@@ -1,4 +1,4 @@
-{ ... }:
+{ userSettings, ... }:
 
 {
   home-manager = {
@@ -14,7 +14,7 @@
     # programs.home-manager.enable = true;
     # nixpkgs.config.allowUnfree = true;
 
-    users.giels = { pkgs, ... }: {
+    users.${userSettings.user} = { pkgs, ... }: {
       home.packages = with pkgs; [
         alacritty
         awesome

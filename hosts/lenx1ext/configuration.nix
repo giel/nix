@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, userSettings, ... }: {
 
   imports = [
     ./hardware-configuration.nix
@@ -24,7 +24,7 @@
     ../../modules/desktop/kde.nix
     # ../../modules/desktop/hyprland.nix
     # ../../modules/desktop/i3_xfce.nix
-    # ../../modules/desktop/xfce.nix
+    ../../modules/desktop/xfce.nix
     ../../modules/desktop/hyprland.nix
 
     # or choose desktop set with GNOME or Budgie:
@@ -65,9 +65,9 @@
     hardware.bluetooth.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.giels = {
+    users.users.${userSettings.user} = {
       isNormalUser = true;
-      description = "Giel Scharff";
+      description = userSettings.userName;
       extraGroups = [ "networkmanager" "wheel" ];
       shell = pkgs.zsh;
     };
@@ -78,7 +78,7 @@
     system.stateVersion = "23.11"; # Did you read the comment?
 
     # Set your time zone.
-    time.timeZone = "Europe/Amsterdam";
+    time.timeZone = userSettings.timeZone;
 
     # Select internationalisation properties.
     i18n.defaultLocale = "en_GB.UTF-8";
