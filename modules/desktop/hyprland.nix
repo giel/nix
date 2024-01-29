@@ -20,9 +20,11 @@
       gnome.gnome-keyring
       hyprland
       hyprland-protocols
+      hyprpaper
       networkmanagerapplet
       roboto
       rofi
+      swaybg
       swaynotificationcenter
       toybox # for killall in restart waybar
       waybar
