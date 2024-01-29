@@ -1,10 +1,10 @@
-{ ... }:
+{ userSettings, ... }:
 
 {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.giels = { pkgs, ... }: {
+    users.${userSettings.user} = { pkgs, ... }: {
       home.packages = with pkgs; [
         awesome
         bat

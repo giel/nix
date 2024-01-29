@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, userSettings, ... }: {
 
   options = {
     my.desktopKDE.option = lib.mkOption {
@@ -84,9 +84,9 @@
     };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.giels = {
+    users.users.${userSettings.user} = {
       isNormalUser = true;
-      description = "Giel Scharff";
+      description = userSettings.userName;
       extraGroups = [ "networkmanager" "wheel" ];
       shell = pkgs.zsh;
     };
@@ -100,7 +100,7 @@
     system.stateVersion = "23.11";
 
     # Set your time zone.
-    time.timeZone = "Europe/Amsterdam";
+    time.timeZone = userSettings.timeZone;
 
     # Select internationalisation properties.
     i18n.defaultLocale = "en_GB.UTF-8";

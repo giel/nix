@@ -22,7 +22,6 @@ in
       # - GNOME Desktop Environment
       # - Budgie
       displayManager.gdm.enable = isGdmNeeded;
-
     };
   };
   environment = {
