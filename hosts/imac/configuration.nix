@@ -2,9 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ pkgs, lib, userSettings, ... }: {
 
-{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -25,18 +24,18 @@
     ../../modules/packages/work.nix
 
     # choose desktop set with KDE:
-    # ../../modules/desktop/kde.nix
-    # ../../modules/desktop/hyprland.nix
-    # ../../modules/desktop/i3_xfce.nix
-    # ../../modules/desktop/xfce.nix
+    #  ../../modules/desktop/kde.nix
+    #  ../../modules/desktop/hyprland.nix
+    #  ../../modules/desktop/i3_xfce.nix
+    #  ../../modules/desktop/xfce.nix
+    ../../modules/desktop/hyprland.nix
 
     # or choose desktop set with GNOME or Budgie:
     # ../../modules/desktop/budgie.nix
     ../../modules/desktop/gnome.nix
-    ../../modules/desktop/hyprland.nix
 
     # Login manager enables start of desktops above via login menu.
-    # Also change to GDM or SSDM for GNOME or KDE in the login_manager:
+    # Also changes to GDM or SSDM for GNOME or KDE in the login_manager:
     ../../modules/desktop/login_manager.nix
   ];
 
@@ -63,10 +62,11 @@
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.giels = {
+  users.users.${userSettings.user} = {
     isNormalUser = true;
-    description = "Giel Scharff";
+    description = userSettings.userName;
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
@@ -77,7 +77,7 @@
   system.stateVersion = "23.11"; # Did you read the comment?
 
   # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = userSettings.timeZone;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
