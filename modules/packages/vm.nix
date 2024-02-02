@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
 
@@ -8,7 +8,7 @@
   programs.dconf.enable = true;
 
   # Add user to libvirtd group
-  users.users.giels.extraGroups = [ "libvirtd" ];
+  users.users.${userSettings.user}.extraGroups = [ "libvirtd" ];
 
   # Install necessary packages
   environment.systemPackages = with pkgs; [

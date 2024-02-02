@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, ... }:
+{ pkgs, userSettings, ... }:
 
 {
   imports = [
@@ -20,7 +20,7 @@
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = userSettings.timeZone;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -52,11 +52,12 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.giels = {
+  users.users.${userSettings.user} = {
     isNormalUser = true;
-    description = "Giel Scharff";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    description = userSettings.userName;
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
+
     packages = with pkgs; [
       chezmoi
       fortune

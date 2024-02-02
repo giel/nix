@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, lib, userSettings, ... }: {
+{ pkgs, userSettings, ... }: {
 
   imports = [
     # Include the results of the hardware scan.
@@ -13,11 +13,11 @@
     ../../modules/mixins/openssh.nix
     ../../modules/mixins/sound_pipewire.nix
     ../../modules/mixins/graphics-tools.nix
-
     ../../modules/packages/system_minimal.nix
     ../../modules/packages/user_minimal.nix
     ../../modules/packages/neovim.nix
 
+    ../../modules/packages/develop.nix
     ../../modules/packages/develop_go.nix
     ../../modules/packages/develop_csharp.nix
 

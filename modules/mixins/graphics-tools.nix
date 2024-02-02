@@ -1,8 +1,8 @@
-{ ... }:
+{ userSettings, ... }:
 
 {
   home-manager = {
-    users.giels = { pkgs, ... }: {
+    users.${userSettings.user} = { pkgs, ... }: {
       home.packages = with pkgs; [ clinfo glxinfo lshw vulkan-tools ];
     };
   };

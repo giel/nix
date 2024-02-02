@@ -1,7 +1,7 @@
-{ pkgs, pkgs-stable, pkgs-2305, ... }: {
+{ pkgs, pkgs-stable, pkgs-2305, userSettings, ... }: {
 
   home-manager = {
-    users.giels = { pkgs, ... }: {
+    users.${userSettings.user} = { pkgs, ... }: {
       home.packages = with pkgs; [
         _1password
         _1password-gui
@@ -23,6 +23,7 @@
         # pkgs-stable.lf
         pkgs-2305.lf
         starship
+        yazi
         unzip
         wezterm
       ];

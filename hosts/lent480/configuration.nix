@@ -28,6 +28,7 @@
     ../../modules/packages/vm.nix
     ../../modules/packages/neovim.nix
 
+    ../../modules/packages/develop.nix
     ../../modules/packages/develop_go.nix
     ../../modules/packages/develop_csharp.nix
 

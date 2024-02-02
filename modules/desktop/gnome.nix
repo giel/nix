@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-
+{ pkgs, userSettings, ... }:
 {
 
   services = {
@@ -38,7 +37,7 @@
   programs.dconf.enable = true;
 
   home-manager = {
-    users.giels = { pkgs, ... }: {
+    users.${userSettings.user} = { pkgs, ... }: {
 
       # find settings with command: dconf dump /
       dconf.settings = {
