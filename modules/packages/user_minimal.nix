@@ -9,6 +9,7 @@
         brave
         chezmoi
         direnv
+        exiftool
         fd
         firefox
         fortune
