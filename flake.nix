@@ -97,6 +97,12 @@
             nixos-hardware.nixosModules.common-gpu-intel
           ];
         };
+        vmnix01 = nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          modules = [
+            ./hosts/vmnix01/configuration.nix
+          ];
+        };
       };
     };
 }
