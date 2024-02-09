@@ -18,6 +18,7 @@
       blueman
       font-awesome
       gnome.gnome-keyring
+      gnome.zenity
       hyprland
       hyprland-protocols
       hyprpaper

@@ -7,13 +7,6 @@
     };
   };
 
-  # options = {
-  #   my.arbitrary.option = lib.mkOption {
-  #     type = lib.types.string;
-  #     default = "stuff";
-  #   };
-  # };
-
   imports = [
     ./hardware-configuration.nix
     ./boot.nix
