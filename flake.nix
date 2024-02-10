@@ -102,6 +102,8 @@
           inherit specialArgs;
           modules = [
             ./hosts/vmnix01/configuration.nix
+            utils.nixosModules.autoGenFromInputs
+            home-manager.nixosModules.home-manager
           ];
         };
       };
