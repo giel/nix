@@ -6,21 +6,20 @@
 
 {
   imports =
-    [
-      # Include the results of the hardware scan.
+    [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.device = "/dev/vda";
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "vmnix01"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
   # Enable Flakes and the new command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -58,9 +57,7 @@
     isNormalUser = true;
     description = "Giel Scharff";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      lazygit
-    ];
+    packages = with pkgs; [];
   };
 
   # Allow unfree packages
@@ -69,6 +66,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     vim
     wget
