@@ -73,7 +73,9 @@ I use the hostname `vmnix01`. All the files with configuration for this `vmnix01
 
     cd ~/git/nix
     mkdir ./hosts/vmnix01
-    cp ~/etc/nixos/* ./hosts/vmnix01/
+    cp /etc/nixos/* ./hosts/vmnix01/
+
+The last cp command issues a warning about `/etc/nixos/result` not being copied. That is not a problem.    
 
 Next the configuration needs to be added to the `flake.nix` file (you can copy the configuration above it and remove some lines):
 
@@ -89,6 +91,10 @@ All the files in the nix directory need to be versioned for flakes, so add the a
 
     git add .
     ./switch.sh
+    git commit -m "first settings vmnix01"
+
+Now you can start using the other host configuration files as an example to optimize this `configuration.nix` with use of modules already present in this repository.
+
 
 # links
 
