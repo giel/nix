@@ -22,6 +22,12 @@ Change (with `nano` editor) the following in the `/etc/nixos/configuration.nix`:
       wget
     ];
 
+Change the hostname from `nixos` to something else and enable flakes:
+
+    networking.hostName = "vmnix01"; # Define your hostname.
+    # Enable Flakes and the new command-line tool
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
 Apply these configuration changes with the the following command:
 
     sudo nixos-rebuild test
@@ -39,11 +45,11 @@ Now do a reboot to see that `vim`, `git` are available:
 
 If this is a virtual machine you may want to make a snapshot or a clone of this state to make creating a new machine easier.
 
-### enable flakes and start using git
+### Use flakes and start using git
 
-We want to use flakes and start using the configuration in git. We use the director `~/git/nix` to store the version controlled configuration.
+We want to use flakes and start using the configuration in git. We use the directory `~/git/nix` to store the version controlled configuration.
 
-You may want to use a ssh shell to log in to the machine as this makes copy and pasting commands probably easier. In the machine use the follwing commands to find the hostname and ip-address:
+You may want to use a ssh shell to log in to the machine as this makes copy and pasting commands probably easier. In the machine use the following commands to find the hostname and ip-address:
 
     hostname 
     ip addr
@@ -63,25 +69,11 @@ In this nix directory we are going to create the configuration of the new machin
 
 Make sure you have a proper git credentials set up. Copy ssh keys if needed and setup your username and email for git.
 
-Decide how what the hostname of the machine will be. By default it is `nixos`. In the example I will change it to `vmnix01`. All the files with configuration for this `vmnix01` will reside in a directory with the same name. And we will start with a copy of the 2 configuration files in this directory.
+I use the hostname `vmnix01`. All the files with configuration for this `vmnix01` will reside in a directory with the same name. And we will start with a copy of the 2 configuration files in this directory. From now on all then configuration changes are done here.
 
     cd ~/git/nix
     mkdir ./hosts/vmnix01
     cp ~/etc/nixos/* ./hosts/vmnix01/
-
-And in the `vmnix01/configuration.nix` the hostname needs to be changed and the flakes need to be enabled:
-
-    networking.hostName = "vmnix01"; # Define your hostname.
-    # Enable Flakes and the new command-line tool
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-To activate the flakes and the new machine name we need to do a last switch without using flakes. We copy the changed configuration to the old location as we cannot pass a config file as a parameter:
-
-    cd ./hosts/vmnix01/
-    sudo cp ./configuration.nix /etc/nixos/
-    sudo nixos-rebuild switch 
-
-After a reboot we will see a new hostname and we can start with flakes.
 
 Next the configuration needs to be added to the `flake.nix` file (you can copy the configuration above it and remove some lines):
 
