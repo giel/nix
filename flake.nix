@@ -46,6 +46,7 @@
         user = "giels";
         userName = "Giel Scharff";
         timeZone = "Europe/Amsterdam";
+        version = "23.11";
       };
       specialArgs = {
         pkgs-stable = import nixpkgs-stable {

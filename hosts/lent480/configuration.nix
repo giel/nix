@@ -141,10 +141,7 @@
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
-    # only needed for sublime4:
-    # nixpkgs.config.permittedInsecurePackages = [ "openssl-1.1.1w" ];
-
-    system.stateVersion = "23.11";
+    system.stateVersion = userSettings.version;
 
     # Set your time zone.
     time.timeZone = userSettings.timeZone;
