@@ -6,6 +6,8 @@
     hyprland.xwayland.enable = true;
     # Enable dconf for programs that might need it
     dconf.enable = true;
+    # enable filemanager thunar
+    thunar.enable = true;
   };
 
   # The login manager is not enabled here. Hyprland will popup in the login manager of 

@@ -15,6 +15,7 @@
     ../../modules/mixins/graphics-tools.nix
     ../../modules/packages/system_minimal.nix
     ../../modules/packages/user_minimal.nix
+    ../../modules/packages/user_minimal_gui.nix
     ../../modules/packages/neovim.nix
 
     ../../modules/packages/develop.nix
@@ -74,7 +75,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = userSettings.version;
 
   # Set your time zone.
   time.timeZone = userSettings.timeZone;

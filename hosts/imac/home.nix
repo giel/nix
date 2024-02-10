@@ -15,7 +15,7 @@
         steam
       ];
 
-      home.stateVersion = "23.11";
+      home.stateVersion = userSettings.version;
     };
   };
 
