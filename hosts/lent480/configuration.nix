@@ -60,11 +60,64 @@
       #   unstable-pkgs.cpufetch
     ];
 
-    # networking
+    # networking systemd
+    # systemd = {
+    #   network = {
+    #     enable = true;
+    #     netdevs = {
+    #       # Create the bridge interface
+    #       "20-br0" = {
+    #         netdevConfig = {
+    #           Kind = "bridge";
+    #           Name = "br0";
+    #         };
+    #       };
+    #     };
+    #     networks = {
+    #       "10-lan" = {
+    #         matchConfig.Name = "wlp3s0";
+    #         networkConfig.DHCP = "ipv4";
+    #         networkConfig.Bridge = "br0";
+    #         # linkConfig.RequiredForOnline = "enslaved"
+    #         linkConfig.RequiredForOnline = "routable";
+
+    #       };
+    #       "20-lan" = {
+    #         matchConfig.Name = "enp0s31f6";
+    #         networkConfig.DHCP = "ipv4";
+    #         networkConfig.Bridge = "br0";
+    #         linkConfig.RequiredForOnline = "enslaved";
+    #       };
+    #       # Configure the bridge for its desired function
+    #       "40-br0" = {
+    #         matchConfig.Name = "br0";
+    #         bridgeConfig = { };
+    #         linkConfig = {
+    #           # or "routable" with IP addresses configured
+    #           RequiredForOnline = "routable";
+    #           # RequiredForOnline = "carrier";
+    #         };
+    #       };
+    #     };
+    #   };
+    # };
+    # enable ip forwarding for the bridge br0 defined above
+    # boot.kernel.sysctl = {
+    #   "net.ipv4.ip_forward" = 1;
+    #   "net.ipv6.conf.all.forwarding" = 1;
+    # };
+
+    # networking non systemd
     networking = {
       hostName = "lent480";
       networkmanager.enable = true;
+
+      interfaces = {
+        wlp3s0.useDHCP = lib.mkDefault true;
+        enp0s31f6.useDHCP = lib.mkDefault true;
+      };
     };
+
 
     # Enable bluetooth
     hardware.bluetooth.enable = true;
