@@ -12,6 +12,7 @@
         # lf
         # pkgs-stable.lf
         pkgs-2305.lf
+        wezterm
       ];
     };
   };
