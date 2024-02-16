@@ -93,5 +93,5 @@ To **add a machine**:
 
 # links
 
-- [documentation](./doc/README.md)
+- [wiki of this repo](https://github.com/giel/nix/wiki)
 - hardware See [README in hosts](./hosts/README.md).
