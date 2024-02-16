@@ -26,7 +26,7 @@
       hyprpaper
       networkmanagerapplet
       roboto
-      rofi
+      rofi-wayland
       swaybg
       swaynotificationcenter
       toybox # for killall in restart waybar
