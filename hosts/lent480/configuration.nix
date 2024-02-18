@@ -15,6 +15,7 @@
     ../../modules/mixins/openssh.nix
     ../../modules/mixins/sound_pipewire.nix
     ../../modules/mixins/xserver_keyboard_touchpad.nix
+    ../../modules/mixins/zsa-keyboards.nix
 
     ../../modules/packages/system_minimal.nix
     ../../modules/packages/user_minimal.nix

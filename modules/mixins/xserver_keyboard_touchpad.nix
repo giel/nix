@@ -5,10 +5,12 @@
     # Enable the X11 windowing system.
     xserver = {
       # Configure keymap in X11
-      layout = "us";
-      # see also desktop/gnome for similair settings that are needed for gnome
-      xkbVariant = "euro";
-      xkbOptions = "caps:escape";
+      xkb = {
+        layout = "us";
+        # see also desktop/gnome for similair settings that are needed for gnome
+        variant = "euro";
+        options = "caps:escape";
+      };
       libinput = {
         enable = true;
         touchpad = {
