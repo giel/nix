@@ -13,6 +13,8 @@
     ../../modules/mixins/openssh.nix
     ../../modules/mixins/sound_pipewire.nix
     ../../modules/mixins/graphics-tools.nix
+    ../../modules/mixins/zsa-keyboards.nix
+
     ../../modules/packages/system_minimal.nix
     ../../modules/packages/user_minimal.nix
     ../../modules/packages/user_minimal_gui.nix
