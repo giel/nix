@@ -19,7 +19,6 @@
         alacritty
         awesome
         bat
-        bcompare
         drawio
         inkscape-with-extensions
         libreoffice

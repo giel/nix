@@ -6,12 +6,15 @@
         _1password
         _1password-gui
         alacritty
+        # bcompare
+        # pkgs-stable.bcompare
         brave
         exiftool
         # lf can used for testing with different versions
         # lf
         # pkgs-stable.lf
         pkgs-2305.lf
+        warp-terminal
         wezterm
       ];
     };

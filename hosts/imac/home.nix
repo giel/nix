@@ -8,7 +8,6 @@
         # thunderbird
         alacritty
         bat
-        bcompare
         bottles
         meld
         python39

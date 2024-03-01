@@ -25,7 +25,7 @@
       # Add "inputs.plasma-manager.homeManagerModules.plasma-manager" to the home-manager.users.${user}.imports
       url = "github:pjones/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
   };
 
@@ -92,7 +92,7 @@
           modules = [
             ./hosts/lenx1ext/configuration.nix
             utils.nixosModules.autoGenFromInputs
-            home-manager.nixosModules.home-manager
+            home-manager.nixosModules.home-manager 
             nixos-hardware.nixosModules.lenovo-thinkpad-t480
             nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
             nixos-hardware.nixosModules.common-gpu-intel
