@@ -23,10 +23,10 @@
     ../../modules/packages/work.nix
 
     # choose desktop set with KDE:
-    ../../modules/desktop/kde.nix
-    # ../../modules/desktop/hyprland.nix
+    # ../../modules/desktop/kde.nix
+    ../../modules/desktop/kde6.nix
     # ../../modules/desktop/i3_xfce.nix
-    ../../modules/desktop/xfce.nix
+    # ../../modules/desktop/xfce.nix
     ../../modules/desktop/hyprland.nix
 
     # or choose desktop set with GNOME or Budgie:
