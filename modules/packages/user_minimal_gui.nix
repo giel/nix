@@ -6,7 +6,7 @@
         _1password
         _1password-gui
         alacritty
-        # bcompare
+        bcompare
         # pkgs-stable.bcompare
         brave
         exiftool
