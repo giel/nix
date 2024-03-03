@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     bluez
     curl
+    fastfetch
     file
     git
     git-lfs
