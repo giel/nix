@@ -12,6 +12,7 @@
     ./boot.nix
     ./home.nix
 
+    ../../modules/mixins/appimage.nix
     ../../modules/mixins/openssh.nix
     ../../modules/mixins/sound_pipewire.nix
     ../../modules/mixins/xserver_keyboard_touchpad.nix
