@@ -22,7 +22,7 @@
   # if you want NixOS initialize Incus (instead of `incus admin init`):
   virtualisation.incus.preseed = { };
 
-# Incus on NixOS is unsupported using iptables. Set `networking.nftables.enable = true;`
-networking.nftables.enable = true;
+  # Incus on NixOS is unsupported using iptables. Set `networking.nftables.enable = true;`
+  networking.nftables.enable = true;
 
 }

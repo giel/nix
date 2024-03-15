@@ -7,12 +7,12 @@
     xserver = {
       # Enable the X11/wayland windowing system.
       enable = true;
-      # Enable the KDE Plasma Desktop Environment.
-      desktopManager.plasma6 = { enable = true; };
-      # fonts for UI (default noto-fonts)
-      desktopManager.plasma6.notoPackage = pkgs.noto-fonts;
       # keyboard settings: see mixins/xserver_keyboard.. file for configuration.nix
     };
+    # Enable the KDE Plasma Desktop Environment.
+    desktopManager.plasma6 = { enable = true; };
+    # fonts for UI (default noto-fonts)
+    desktopManager.plasma6.notoPackage = pkgs.noto-fonts;
   };
 
   environment = {
