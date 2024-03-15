@@ -21,7 +21,8 @@
     ../../modules/packages/system_minimal.nix
     ../../modules/packages/user_minimal.nix
     ../../modules/packages/user_minimal_gui.nix
-    ../../modules/packages/vm.nix
+    # ../../modules/packages/vm.nix
+    ../../modules/packages/vm_incus.nix
     ../../modules/packages/neovim.nix
 
     ../../modules/packages/develop.nix
