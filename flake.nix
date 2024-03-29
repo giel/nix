@@ -98,6 +98,13 @@
             nixos-hardware.nixosModules.common-gpu-intel
           ];
         };
+        mf9-7940hs = nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          modules = [
+            ./hosts/mf9-7940hs/configuration.nix
+            home-manager.nixosModules.home-manager
+          ];
+        };
         vmnix01 = nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           modules = [
