@@ -2,22 +2,31 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./boot.nix
+      ./home.nix
+
+    ../../modules/mixins/openssh.nix
+    ../../modules/mixins/sound_pipewire.nix
+
+    ../../modules/packages/system_minimal.nix
+    ../../modules/packages/user_minimal.nix
+    ../../modules/packages/user_minimal_gui.nix
+    ../../modules/packages/neovim.nix
+
+    ../../modules/packages/develop.nix
+    ../../modules/packages/develop_go.nix
+    ../../modules/packages/develop_csharp.nix
     ];
 
   # Enable Flakes and the new command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.initrd.luks.devices."luks-2ef177b6-3ce5-4544-847f-249a27643dea".device = "/dev/disk/by-uuid/2ef177b6-3ce5-4544-847f-249a27643dea";
   networking.hostName = "mf9-7940hs"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -83,10 +92,11 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.giels = {
+  users.users.${userSettings.user} = {
     isNormalUser = true;
-    description = "Giel Scharff";
+    description = userSettings.userName;
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       firefox
       kate
@@ -100,9 +110,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   wget
-   git
+#   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+#   wget
+#   git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
