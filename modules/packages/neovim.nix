@@ -7,6 +7,7 @@
     cmake
     gcc_multi
     gnumake
+    go
     gopls
     lua54Packages.busted
     lua54Packages.luarocks
@@ -14,7 +15,9 @@
     marksman
     neovim
     nodejs_18
+    python3
     ripgrep
+    rustup
     stylua
     yaml-language-server
   ];
