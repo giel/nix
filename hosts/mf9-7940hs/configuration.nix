@@ -6,39 +6,69 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./boot.nix
       ./home.nix
 
-    ../../modules/mixins/openssh.nix
-    ../../modules/mixins/sound_pipewire.nix
+      ../../modules/mixins/openssh.nix
+      ../../modules/mixins/sound_pipewire.nix
+      ../../modules/mixins/graphics-tools.nix
+      ../../modules/mixins/zsa-keyboards.nix
 
-    ../../modules/packages/system_minimal.nix
-    ../../modules/packages/user_minimal.nix
-    ../../modules/packages/user_minimal_gui.nix
-    ../../modules/packages/neovim.nix
+      ../../modules/packages/system_minimal.nix
+      ../../modules/packages/user_minimal.nix
+      ../../modules/packages/user_minimal_gui.nix
+      ../../modules/packages/neovim.nix
 
-    ../../modules/packages/develop.nix
-    ../../modules/packages/develop_go.nix
-    ../../modules/packages/develop_csharp.nix
+      ../../modules/packages/develop.nix
+      ../../modules/packages/develop_go.nix
+      ../../modules/packages/develop_csharp.nix
+      # choose desktop set with KDE:
+      ../../modules/desktop/kde.nix
+      #  ../../modules/desktop/hyprland.nix
+      #  ../../modules/desktop/i3_xfce.nix
+      #  ../../modules/desktop/xfce.nix
+      ../../modules/desktop/hyprland.nix
+
+      # or choose desktop set with GNOME or Budgie:
+      # ../../modules/desktop/budgie.nix
+      # ../../modules/desktop/gnome.nix
+
+      # Login manager enables start of desktops above via login menu.
+      # Also changes to GDM or SSDM for GNOME or KDE in the login_manager:
+      ../../modules/desktop/login_manager.nix
     ];
 
   # Enable Flakes and the new command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.hostName = "mf9-7940hs"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking
+  networking = {
+    hostName = "mf9-7940hs";
+    networkmanager.enable = true;
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.${userSettings.user} = {
+    isNormalUser = true;
+    description = userSettings.userName;
+    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  system.stateVersion = userSettings.version;
 
   # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = userSettings.timeZone;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -55,91 +85,28 @@
     LC_TIME = "nl_NL.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services = {
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    # Enable CUPS to print documents.
+    printing.enable = true;
+
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${userSettings.user} = {
-    isNormalUser = true;
-    description = userSettings.userName;
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
-    packages = with pkgs; [
-      firefox
-      kate
-    #  thunderbird
-    ];
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-#   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-#   wget
-#   git
-  ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  # font Jetbrains does not seem to work with Alacritty
+  # Also sometimes a warning is issued to remove a file manually 
+  fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      font-awesome
+      inconsolata-nerdfont
+      jetbrains-mono
+      source-code-pro
+      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    ];
+  };
 
 }
