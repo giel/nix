@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
 
@@ -16,6 +16,7 @@
     wget
     xclip
     zsh
+    pkgs-stable.xz
   ];
 
   programs.zsh.enable = true;
