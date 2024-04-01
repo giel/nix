@@ -19,6 +19,7 @@
     systemPackages = with pkgs; [
       blueman
       font-awesome
+      fuzzel
       gnome.gnome-keyring
       gnome.zenity
       hyprland
@@ -26,12 +27,12 @@
       hyprpaper
       networkmanagerapplet
       roboto
-      rofi-wayland
+      # rofi-wayland
       swaybg
       swaynotificationcenter
       toybox # for killall in restart waybar
       waybar
-      wofi
+      # wofi
       xdg-desktop-portal
       xdg-desktop-portal-gtk
       xdg-desktop-portal-hyprland
