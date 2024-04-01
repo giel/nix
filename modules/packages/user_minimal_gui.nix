@@ -14,7 +14,7 @@
         # lf
         # pkgs-stable.lf
         pkgs-2305.lf
-        # warp-terminal
+        warp-terminal
         wezterm
       ];
     };

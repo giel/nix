@@ -8,6 +8,7 @@
         fd
         fortune
         fzf
+        gat
         gitui
         lazygit
         lsd
