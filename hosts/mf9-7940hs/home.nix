@@ -1,4 +1,5 @@
 { userSettings, ... }: {
+  # { userSettings, plasma-manager, ... }: {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -11,6 +12,7 @@
       ];
 
       home.stateVersion = userSettings.version;
+      # sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
     };
   };
 
