@@ -16,7 +16,8 @@
     wget
     xclip
     zsh
-    pkgs-stable.xz
+    # pkgs-stable.xz
+    xz
   ];
 
   programs.zsh.enable = true;
