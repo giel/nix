@@ -25,6 +25,8 @@
       ../../modules/packages/develop.nix
       ../../modules/packages/develop_go.nix
       ../../modules/packages/develop_csharp.nix
+      ../../modules/packages/develop_cloud.nix
+
       # choose desktop set with KDE:
       # ../../modules/desktop/kde.nix
       ../../modules/desktop/kde6.nix
@@ -98,7 +100,7 @@
   # $ nix search wget
 
   # font Jetbrains does not seem to work with Alacritty
-  # Also sometimes a warning is issued to remove a file manually 
+  # Also sometimes a warning is issued to remove a file manually
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
