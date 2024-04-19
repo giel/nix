@@ -5,18 +5,21 @@ let
     config.services.xserver.desktopManager.budgie.enable;
 in
 {
+
+  # trace: warning: The option `services.xserver.displayManager.sddm.enable' has been renamed to `services.displayManager.sddm.enable'.
+
   services = {
+    # Enable SSDM display managere for set of:
+    # - KDE Plasma Desktop Environment.
+    # - Hyprland
+    # - xfce
+    # - i3
+    displayManager.sddm.enable = !isGdmNeeded;
+
     # Enable the X11 windowing system.
     xserver = {
       # Enable the X11 windowing system.
       enable = true;
-
-      # Enable SSDM display managere for set of:
-      # - KDE Plasma Desktop Environment.
-      # - Hyprland
-      # - xfce
-      # - i3
-      displayManager.sddm.enable = !isGdmNeeded;
 
       # Enable the GNOME display manager for:
       # - GNOME Desktop Environment
@@ -24,6 +27,7 @@ in
       displayManager.gdm.enable = isGdmNeeded;
     };
   };
+
   environment = {
     # greetd as login manager
     systemPackages = with pkgs; [

@@ -10,6 +10,7 @@
         # pkgs-stable.bcompare
         brave
         exiftool
+        obsidian
         # lf can used for testing with different versions
         # lf
         # pkgs-stable.lf
