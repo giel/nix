@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -10,14 +10,15 @@
     git
     git-lfs
     neofetch
+    nh
+    nix-output-monitor
     nixfmt
+    nvd
     tmux
     vim
     wget
     xclip
     zsh
-    # pkgs-stable.xz
-    xz
   ];
 
   programs.zsh.enable = true;
