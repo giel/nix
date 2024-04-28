@@ -3,6 +3,7 @@
   home-manager = {
     users.${userSettings.user} = { pkgs, ... }: {
       home.packages = with pkgs; [
+        bat
         chezmoi
         direnv
         fd

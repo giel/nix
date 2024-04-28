@@ -7,8 +7,6 @@
       home.packages = with pkgs; [
         # sublime4  # seems to use open-ssl 1.1 that is end of life
         alacritty
-        bat
-        obsidian
         thunderbird
       ];
 
