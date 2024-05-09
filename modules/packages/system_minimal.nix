@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-
   environment.systemPackages = with pkgs; [
     bluez
     curl
@@ -9,7 +8,6 @@
     file
     git
     git-lfs
-    neofetch
     nh
     nix-output-monitor
     nixfmt

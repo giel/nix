@@ -84,7 +84,8 @@
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.lenovo-thinkpad-t480
             nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
-            nixos-hardware.nixosModules.common-gpu-intel
+            # 9-5-2024 temporarily disabled because of compile error
+            # nixos-hardware.nixosModules.common-gpu-intel
           ];
         };
         lenx1ext = nixpkgs.lib.nixosSystem {
@@ -95,7 +96,8 @@
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.lenovo-thinkpad-t480
             nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
-            nixos-hardware.nixosModules.common-gpu-intel
+            # 9-5-2024 temporarily disabled because of compile error
+            # nixos-hardware.nixosModules.common-gpu-intel
           ];
         };
         mf9-7940hs = nixpkgs.lib.nixosSystem {
