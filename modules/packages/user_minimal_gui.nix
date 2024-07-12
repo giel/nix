@@ -17,6 +17,7 @@
         pkgs-2305.lf
         warp-terminal
         wezterm
+        zed-editor
       ];
     };
   };

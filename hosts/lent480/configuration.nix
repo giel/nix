@@ -127,7 +127,7 @@
     hardware.bluetooth.enable = true;
 
     hardware = {
-      opengl.enable = true;
+      graphics.enable = true;
       trackpoint = {
         enable = true;
         sensitivity = 255;
@@ -178,7 +178,7 @@
     };
 
     # font Jetbrains does not seem to work with Alacritty
-    # Also sometimes a warning is issued to remove a file manually 
+    # Also sometimes a warning is issued to remove a file manually
     fonts = {
       fontDir.enable = true;
       packages = with pkgs; [
