@@ -26,6 +26,8 @@
       ../../modules/packages/develop_go.nix
       ../../modules/packages/develop_csharp.nix
       ../../modules/packages/develop_cloud.nix
+    # ../../modules/packages/vm.nix
+      ../../modules/packages/vm_incus.nix
 
       # choose desktop set with KDE:
       # ../../modules/desktop/kde.nix
