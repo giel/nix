@@ -83,7 +83,7 @@
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.lenovo-thinkpad-t480
-            nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
+            # nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
             # 9-5-2024 temporarily disabled because of compile error
             # nixos-hardware.nixosModules.common-gpu-intel
           ];
@@ -95,7 +95,7 @@
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.lenovo-thinkpad-t480
-            nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
+            # nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
             # 9-5-2024 temporarily disabled because of compile error
             # nixos-hardware.nixosModules.common-gpu-intel
           ];

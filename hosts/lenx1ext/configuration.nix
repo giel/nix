@@ -20,6 +20,8 @@
     ../../modules/packages/develop.nix
     ../../modules/packages/develop_go.nix
     ../../modules/packages/develop_csharp.nix
+    # ../../modules/packages/vm.nix
+    ../../modules/packages/vm_incus.nix
 
     ../../modules/packages/work.nix
 
@@ -110,7 +112,7 @@
     };
 
     # font Jetbrains does not seem to work with Alacritty
-    # Also sometimes a warning is issued to remove a file manually 
+    # Also sometimes a warning is issued to remove a file manually
     fonts = {
       fontDir.enable = true;
       packages = with pkgs; [
