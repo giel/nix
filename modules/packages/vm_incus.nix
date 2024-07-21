@@ -11,6 +11,7 @@
   # Install necessary packages
   environment.systemPackages = with pkgs; [
     incus
+    qemu_full # to support vm in incus, buts still does not work
   ];
 
   # Manage the virtualisation services

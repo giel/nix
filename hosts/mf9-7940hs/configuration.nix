@@ -63,7 +63,7 @@
   users.users.${userSettings.user} = {
     isNormalUser = true;
     description = userSettings.userName;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "incus-admin"];
     shell = pkgs.zsh;
   };
 
