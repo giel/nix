@@ -10,7 +10,7 @@
         # pkgs-stable.bcompare
         brave
         exiftool
-        obsidian
+        # obsidian todo find out what goes wrong
         # lf can used for testing with different versions
         # lf
         # pkgs-stable.lf
