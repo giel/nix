@@ -10,7 +10,7 @@
     thunar.enable = true;
   };
 
-  # The login manager is not enabled here. Hyprland will popup in the login manager of 
+  # The login manager is not enabled here. Hyprland will popup in the login manager of
   # KDE or Gnome. If none of those are installed as well choose the login manager of KDE.
   # see `login_manager.nix`.
 
@@ -20,8 +20,7 @@
       blueman
       font-awesome
       fuzzel
-      gnome.gnome-keyring
-      gnome.zenity
+      gnome-keyring
       hyprland
       hyprland-protocols
       hyprpaper
@@ -38,6 +37,7 @@
       xdg-desktop-portal-hyprland
       xdg-utils
       xfce.thunar
+      zenity
     ];
   };
 

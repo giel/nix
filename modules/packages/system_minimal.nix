@@ -10,7 +10,7 @@
     git-lfs
     nh
     nix-output-monitor
-    nixfmt
+    nixfmt-classic
     nvd
     tmux
     vim

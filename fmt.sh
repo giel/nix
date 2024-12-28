@@ -7,7 +7,6 @@ if [ $# -eq 0 ]; then
 	# Find and format .nix files
 	find "$directory" -type f -name "*.nix" | while read -r file; do
 		echo "Formatting $file..."
-		# nixfmt "$file"
 		nix fmt "$file"
 	done
 else

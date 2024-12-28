@@ -16,18 +16,20 @@
   environment = {
     # extra Gnome packages
     systemPackages = with pkgs; [
-      gnome.dconf-editor
+      dconf-editor
       gnome.gnome-shell-extensions
-      gnome.gnome-tweaks
+      gnome-tweaks
       gnomeExtensions.appindicator
       # TODO find out how to confure
       #      gnomeExtensions.dash-to-dock
       #      gnomeExtensions.vitals
     ];
     # Gnome ignored packages
-    gnome.excludePackages = (with pkgs; [ gnome-tour ]) ++ (with pkgs.gnome; [
+    gnome.excludePackages = (with pkgs; [
+      gnome-tour
       geary
       gnome-calendar
+    ]) ++ (with pkgs.gnome; [
       gnome-contacts
       gnome-initial-setup
     ]);

@@ -26,7 +26,7 @@
       ../../modules/packages/develop_go.nix
       ../../modules/packages/develop_csharp.nix
       ../../modules/packages/develop_cloud.nix
-    # ../../modules/packages/vm.nix
+      # ../../modules/packages/vm.nix
       ../../modules/packages/vm_incus.nix
 
       # choose desktop set with KDE:
@@ -63,7 +63,7 @@
   users.users.${userSettings.user} = {
     isNormalUser = true;
     description = userSettings.userName;
-    extraGroups = [ "networkmanager" "wheel" "incus-admin"];
+    extraGroups = [ "networkmanager" "wheel" "incus-admin" ];
     shell = pkgs.zsh;
   };
 
