@@ -12,6 +12,8 @@
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
+    ghostty.url = "github:ghostty-org/ghostty";
+
     # User Package Management
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -38,6 +40,7 @@
     , home-manager
     , utils
     , plasma-manager
+    , ghostty
     , ...
     }@inputs:
     let
@@ -86,6 +89,7 @@
             # nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
             # 9-5-2024 temporarily disabled because of compile error
             # nixos-hardware.nixosModules.common-gpu-intel
+            { environment.systemPackages = [ ghostty.packages.x86_64-linux.default ]; }
           ];
         };
         lenx1ext = nixpkgs.lib.nixosSystem {
