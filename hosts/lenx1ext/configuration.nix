@@ -9,19 +9,19 @@
     ../../modules/mixins/openssh.nix
     ../../modules/mixins/sound_pipewire.nix
     ../../modules/mixins/xserver_keyboard_touchpad.nix
-    ../../modules/mixins/graphics-tools.nix
+#    ../../modules/mixins/graphics-tools.nix
 
     ../../modules/packages/system_minimal.nix
     ../../modules/packages/user_minimal.nix
     ../../modules/packages/user_minimal_gui.nix
-    ../../modules/packages/neovim.nix
+#    ../../modules/packages/neovim.nix
     ../../modules/packages/keyboard_firmware.nix
 
     ../../modules/packages/develop.nix
     ../../modules/packages/develop_go.nix
     ../../modules/packages/develop_csharp.nix
     # ../../modules/packages/vm.nix
-    ../../modules/packages/vm_incus.nix
+ #   ../../modules/packages/vm_incus.nix
 
     ../../modules/packages/work.nix
 
