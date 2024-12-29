@@ -86,10 +86,10 @@
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.lenovo-thinkpad-t480
+            { environment.systemPackages = [ ghostty.packages.x86_64-linux.default ]; }
             # nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
             # 9-5-2024 temporarily disabled because of compile error
             # nixos-hardware.nixosModules.common-gpu-intel
-            { environment.systemPackages = [ ghostty.packages.x86_64-linux.default ]; }
           ];
         };
         lenx1ext = nixpkgs.lib.nixosSystem {
@@ -99,6 +99,7 @@
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.lenovo-thinkpad-t480
+            { environment.systemPackages = [ ghostty.packages.x86_64-linux.default ]; }
             # nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
             # 9-5-2024 temporarily disabled because of compile error
             # nixos-hardware.nixosModules.common-gpu-intel
