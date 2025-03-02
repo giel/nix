@@ -3,7 +3,7 @@
   home-manager = {
     users.${userSettings.user} = { pkgs, ... }: {
       home.packages = with pkgs; [
-        _1password
+        _1password-cli
         _1password-gui
         alacritty
         bcompare

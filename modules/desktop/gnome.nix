@@ -17,7 +17,7 @@
     # extra Gnome packages
     systemPackages = with pkgs; [
       dconf-editor
-      gnome.gnome-shell-extensions
+      gnome-shell-extensions
       gnome-tweaks
       gnomeExtensions.appindicator
       # TODO find out how to confure
@@ -26,12 +26,11 @@
     ];
     # Gnome ignored packages
     gnome.excludePackages = (with pkgs; [
-      gnome-tour
       geary
       gnome-calendar
-    ]) ++ (with pkgs.gnome; [
       gnome-contacts
       gnome-initial-setup
+      gnome-tour
     ]);
   };
 

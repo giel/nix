@@ -5,7 +5,6 @@
     users.${userSettings.user} = { pkgs, ... }: {
       home.packages = with pkgs; [
         openfortivpn
-        slack
         remmina
       ];
 
