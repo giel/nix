@@ -14,6 +14,7 @@
         # lf can used for testing with different versions
         # lf
         # pkgs-stable.lf
+        ghostty
         pkgs-2305.lf
         warp-terminal
         wezterm
