@@ -117,13 +117,13 @@
       fontDir.enable = true;
       packages = with pkgs; [
         font-awesome
-        inconsolata-nerdfont
         jetbrains-mono
+        nerd-fonts.fira-code
+        nerd-fonts.inconsolata
+        nerd-fonts.jetbrains-mono
         source-code-pro
-        (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
       ];
     };
-
   };
 
 }

@@ -17,7 +17,7 @@
   environment = {
     # extra KDE  packages
     # systemPackages = with pkgs.libsForQt5; [ packagekit-qt bismuth ];
-    plasma6.excludePackages = (with pkgs; [ elisa khelpcenter oxygen ]);
+    plasma6.excludePackages = (with pkgs; [ kdePackages.elisa kdePackages.khelpcenter kdePackages.oxygen ]);
 
   };
 
