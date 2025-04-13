@@ -6,9 +6,10 @@
     # Unstable Nix Packages - the packages we use by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # Default Current stable Nix Packages
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     # Older branch to use in other cases
     nixpkgs-2305.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs-2411.url = "github:nixos/nixpkgs/nixos-24.11";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -36,6 +37,7 @@
     , nixpkgs
     , nixpkgs-stable
     , nixpkgs-2305
+    , nixpkgs-2411
     , nixos-hardware
     , home-manager
     , utils
@@ -57,6 +59,10 @@
           config.allowUnfree = true;
         };
         pkgs-2305 = import nixpkgs-2305 {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        pkgs-2411 = import nixpkgs-2411 {
           inherit system;
           config.allowUnfree = true;
         };
