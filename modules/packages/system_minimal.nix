@@ -12,6 +12,7 @@
     nix-output-monitor
     nixfmt-classic
     nvd
+    stow
     tmux
     vim
     wget
