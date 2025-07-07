@@ -1,14 +1,15 @@
 { pkgs, userSettings, ... }:
 {
-
+  #trace: Obsolete option `services.xserver.desktopManager.gnome.enable' is used.
+  # It was renamed to `services.desktopManager.gnome.enable'.
   services = {
+    # Enable the GNOME Desktop Environment.
+    # displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
     # Enable the X11 windowing system.
     xserver = {
       # Enable the X11 windowing system.
       enable = true;
-      # Enable the GNOME Desktop Environment.
-      # displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
       # keyboard settings: see mixins/xserver_keyboard.. file for configuration.nix
     };
   };

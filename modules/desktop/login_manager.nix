@@ -1,12 +1,13 @@
 { pkgs, config, ... }:
 # meant as a generic login manager
 let
-  isGdmNeeded = config.services.xserver.desktopManager.gnome.enable ||
-    config.services.xserver.desktopManager.budgie.enable;
+  isGdmNeeded = config.services.desktopManager.gnome.enable ||
+    config.services.desktopManager.budgie.enable;
 in
 {
 
-  # trace: warning: The option `services.xserver.displayManager.sddm.enable' has been renamed to `services.displayManager.sddm.enable'.
+  # trace: warning: The option `services.xserver.displayManager.sddm.enable' has been
+  # renamed to `services.displayManager.sddm.enable'.
 
   services = {
     # Enable SSDM display managere for set of:
@@ -16,15 +17,16 @@ in
     # - i3
     displayManager.sddm.enable = !isGdmNeeded;
 
+    # Enable the GNOME display manager for:
+    # - GNOME Desktop Environment
+    # - Budgie
+    displayManager.gdm.enable = isGdmNeeded;
+
     # Enable the X11 windowing system.
     xserver = {
       # Enable the X11 windowing system.
       enable = true;
 
-      # Enable the GNOME display manager for:
-      # - GNOME Desktop Environment
-      # - Budgie
-      displayManager.gdm.enable = isGdmNeeded;
     };
   };
 

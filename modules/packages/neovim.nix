@@ -14,7 +14,7 @@
     lua-language-server # maybe not needed if using nix-ld as done below
     marksman
     pkgs-2411.neovim
-    nodejs_18
+    # nodejs_18
     python3
     ripgrep
     rustup
