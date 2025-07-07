@@ -24,7 +24,7 @@
         libreoffice
         meld
         pcloud
-        python39
+        # python39
         # sublime4  # seems to use open-ssl 1.1 that is end of life
         thunderbird
       ];

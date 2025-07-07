@@ -2,7 +2,7 @@
 # meant as a generic login manager
 let
   isGdmNeeded = config.services.desktopManager.gnome.enable ||
-    config.services.desktopManager.budgie.enable;
+    config.services.xserver.desktopManager.budgie.enable;
 in
 {
 
