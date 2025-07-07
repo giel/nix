@@ -6,10 +6,11 @@
     # Unstable Nix Packages - the packages we use by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # Default Current stable Nix Packages
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     # Older branch to use in other cases
     nixpkgs-2305.url = "github:nixos/nixpkgs/nixos-23.05";
     nixpkgs-2411.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-2505.url = "github:nixos/nixpkgs/nixos-25.05";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
