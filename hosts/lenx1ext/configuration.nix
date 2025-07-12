@@ -20,6 +20,7 @@
     ../../modules/packages/develop.nix
     ../../modules/packages/develop_go.nix
     ../../modules/packages/develop_csharp.nix
+    ../../modules/packages/netbird.nix
     # ../../modules/packages/vm.nix
  #   ../../modules/packages/vm_incus.nix
 
