@@ -11,6 +11,7 @@
     nixpkgs-2305.url = "github:nixos/nixpkgs/nixos-23.05";
     nixpkgs-2411.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-2505.url = "github:nixos/nixpkgs/nixos-25.05";
+    # nixpkgs-2511.url = "github:nixos/nixpkgs/nixos-25.11";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -39,6 +40,7 @@
     , nixpkgs-stable
     , nixpkgs-2305
     , nixpkgs-2411
+    , nixpkgs-2505
     , nixos-hardware
     , home-manager
     , utils
@@ -64,6 +66,10 @@
           config.allowUnfree = true;
         };
         pkgs-2411 = import nixpkgs-2411 {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        pkgs-2505 = import nixpkgs-2505 {
           inherit system;
           config.allowUnfree = true;
         };

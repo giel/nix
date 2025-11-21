@@ -1,4 +1,4 @@
-{ pkgs, pkgs-2411, ... }:
+{ pkgs, pkgs-2505, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -13,7 +13,8 @@
     lua54Packages.luarocks
     lua-language-server # maybe not needed if using nix-ld as done below
     marksman
-    pkgs-2411.neovim
+    # pkgs-2411.neovim
+    pkgs-2505.neovim
     # nodejs_18
     python3
     ripgrep
