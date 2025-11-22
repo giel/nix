@@ -33,8 +33,8 @@ in
   environment = {
     # greetd as login manager
     systemPackages = with pkgs; [
-      greetd.greetd
-      greetd.tuigreet
+      greetd
+      tuigreet
     ];
   };
 
