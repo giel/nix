@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, pkgs-2305, userSettings, ... }: {
+{ pkgs, pkgs-stable, userSettings, ... }: {
 
   home-manager = {
     users.${userSettings.user} = { pkgs, ... }: {
@@ -15,10 +15,6 @@
         lazygit
         lsd
         marksman
-        # lf can used for testing with different versions
-        # lf
-        # pkgs-stable.lf
-        pkgs-2305.lf
         starship
         yazi
         unzip

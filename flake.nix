@@ -8,10 +8,8 @@
     # Default Current stable Nix Packages
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     # Older branch to use in other cases
-    nixpkgs-2305.url = "github:nixos/nixpkgs/nixos-23.05";
-    nixpkgs-2411.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-2505.url = "github:nixos/nixpkgs/nixos-25.05";
-    # nixpkgs-2511.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-2511.url = "github:nixos/nixpkgs/nixos-25.11";
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
@@ -38,9 +36,8 @@
     { self
     , nixpkgs
     , nixpkgs-stable
-    , nixpkgs-2305
-    , nixpkgs-2411
     , nixpkgs-2505
+    , nixpkgs-2511
     , nixos-hardware
     , home-manager
     , utils
@@ -61,15 +58,11 @@
           inherit system;
           config.allowUnfree = true;
         };
-        pkgs-2305 = import nixpkgs-2305 {
-          inherit system;
-          config.allowUnfree = true;
-        };
-        pkgs-2411 = import nixpkgs-2411 {
-          inherit system;
-          config.allowUnfree = true;
-        };
         pkgs-2505 = import nixpkgs-2505 {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        pkgs-2511 = import nixpkgs-2511 {
           inherit system;
           config.allowUnfree = true;
         };
