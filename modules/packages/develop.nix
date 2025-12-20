@@ -8,6 +8,7 @@
         jq
         mediawriter
         meld
+        opencode
       ];
     };
   };
