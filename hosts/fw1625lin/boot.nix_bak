@@ -1,0 +1,14 @@
+{ ... }:
+
+{
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  boot.initrd.luks.devices."luks-cbda84dd-8859-4517-bf04-862af3ef6ea8".device = "/dev/disk/by-uuid/cbda84dd-8859-4517-bf04-862af3ef6ea8";
+}
+

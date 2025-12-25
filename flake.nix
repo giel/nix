@@ -78,6 +78,14 @@
 
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
+        fw1625lin = nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          modules = [
+            ./hosts/fw1625lin/configuration.nix
+            utils.nixosModules.autoGenFromInputs
+            home-manager.nixosModules.home-manager
+          ];
+        };
         im4014 = nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           modules = [

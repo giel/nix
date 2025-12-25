@@ -19,6 +19,10 @@
 
   boot.initrd.luks.devices."luks-cbda84dd-8859-4517-bf04-862af3ef6ea8".device = "/dev/disk/by-uuid/cbda84dd-8859-4517-bf04-862af3ef6ea8";
   networking.hostName = "fw1625lin"; # Define your hostname.
+  # Enable Flakes and the new command-line tool
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
