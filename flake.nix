@@ -85,6 +85,7 @@
             ./hosts/fw1625lin/configuration.nix
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager
+            nixos-hardware.nixosModules.framework-16-7040-amd
           ];
         };
         im4014 = nixpkgs.lib.nixosSystem {
