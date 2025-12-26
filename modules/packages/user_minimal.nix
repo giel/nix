@@ -18,6 +18,7 @@
         starship
         yazi
         unzip
+        zoxide
       ];
     };
   };

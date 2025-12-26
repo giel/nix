@@ -22,12 +22,6 @@ in
     # - Budgie
     displayManager.gdm.enable = isGdmNeeded;
 
-    # Enable the X11 windowing system.
-    xserver = {
-      # Enable the X11 windowing system.
-      enable = true;
-
-    };
   };
 
   environment = {

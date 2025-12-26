@@ -14,7 +14,6 @@
       ../../modules/packages/user_minimal_gui.nix
       ../../modules/packages/neovim.nix
 
-
       # choose desktop set with KDE:
       # ../../modules/desktop/kde.nix
       ../../modules/desktop/kde6.nix
@@ -42,17 +41,12 @@
       linkInputs = true;
     };
 
-    networking.hostName = "fw1625lin"; # Define your hostname.
-
-
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-    # Configure network proxy if necessary
-    # networking.proxy.default = "http://user:password@proxy:port/";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-    # Enable networking
-    networking.networkmanager.enable = true;
+    networking =
+      {
+        hostName = "fw1625lin"; # Define your hostname.
+        # Enable networking
+        networkmanager.enable = true;
+      };
 
     time.timeZone = userSettings.timeZone;
 
@@ -71,26 +65,8 @@
       LC_TIME = "nl_NL.UTF-8";
     };
 
-    # Enable the X11 windowing system.
-    # You can disable this if you're only using the Wayland session.
-    services.xserver.enable = true;
-
-    # Enable the KDE Plasma Desktop Environment.
-    # services.displayManager.sddm.enable
-    # services.desktopManager.plasma6.enable = true;
-
-    # Configure keymap in X11
-    services.xserver.xkb = {
-      layout = "us";
-      variant = "";
-    };
-
     # Enable CUPS to print documents.
     services.printing.enable = true;
-
-
-    # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.${userSettings.user} = {
@@ -99,9 +75,6 @@
       extraGroups = [ "networkmanager" "wheel" ];
       shell = pkgs.zsh;
     };
-
-    # Install firefox.
-    programs.firefox.enable = true;
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;

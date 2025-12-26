@@ -2,12 +2,6 @@
 
 {
   services = {
-    # Enable the X11 windowing system.
-    xserver = {
-      # Enable the X11/wayland windowing system.
-      enable = true;
-      # keyboard settings: see mixins/xserver_keyboard.. file for configuration.nix
-    };
     # Enable the KDE Plasma Desktop Environment.
     desktopManager.plasma6 = { enable = true; };
     # fonts for UI (default noto-fonts)
@@ -18,7 +12,6 @@
     # extra KDE  packages
     # systemPackages = with pkgs.libsForQt5; [ packagekit-qt bismuth ];
     plasma6.excludePackages = (with pkgs; [ kdePackages.elisa kdePackages.khelpcenter kdePackages.oxygen ]);
-
   };
 
   # Enable dconf for programs that might need it

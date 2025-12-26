@@ -9,6 +9,7 @@
         bcompare
         brave
         exiftool
+        firefox
         # obsidian todo find out what goes wrong
         ghostty
         warp-terminal
