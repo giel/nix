@@ -4,7 +4,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-
+    backupFileExtension = "home-manager.bak";
     # Home Manager needs a bit of information about you and the paths it should
     # manage.
     # home.username = "giels";

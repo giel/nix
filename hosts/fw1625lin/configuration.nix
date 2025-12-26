@@ -84,6 +84,20 @@
     environment.systemPackages = with pkgs; [
     ];
 
+    # font Jetbrains does not seem to work with Alacritty
+    # Also sometimes a warning is issued to remove a file manually
+    fonts = {
+      fontDir.enable = true;
+      packages = with pkgs; [
+        font-awesome
+        jetbrains-mono
+        nerd-fonts.fira-code
+        nerd-fonts.inconsolata
+        nerd-fonts.jetbrains-mono
+        source-code-pro
+      ];
+    };
+
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
     # on your system were taken. It‘s perfectly fine and recommended to leave
