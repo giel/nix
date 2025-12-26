@@ -16,13 +16,7 @@
 
     users.${userSettings.user} = { pkgs, ... }: {
       home.packages = with pkgs; [
-        alacritty
-        awesome
-        bat
         drawio
-        inkscape-with-extensions
-        libreoffice
-        meld
         pcloud
         # python39
         # sublime4  # seems to use open-ssl 1.1 that is end of life
