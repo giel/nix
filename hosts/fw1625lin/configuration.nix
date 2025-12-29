@@ -14,6 +14,15 @@
       ../../modules/packages/user_minimal_gui.nix
       ../../modules/packages/neovim.nix
 
+      ../../modules/packages/develop.nix
+      ../../modules/packages/develop_go.nix
+      ../../modules/packages/develop_csharp.nix
+      ../../modules/packages/netbird.nix
+      # ../../modules/packages/vm.nix
+      #   ../../modules/packages/vm_incus.nix
+
+      # ../../modules/packages/work.nix
+
       # choose desktop set with KDE:
       # ../../modules/desktop/kde.nix
       ../../modules/desktop/kde6.nix
@@ -67,6 +76,9 @@
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
+
+    # enable bluetooth
+    hardware.bluetooth.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.${userSettings.user} = {
