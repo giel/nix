@@ -29,6 +29,7 @@
       # ../../modules/desktop/i3_xfce.nix
       # ../../modules/desktop/xfce.nix
       ../../modules/desktop/hyprland.nix
+      ../../modules/desktop/niri.nix
 
       # or choose desktop set with GNOME or Budgie:
       # ../../modules/desktop/budgie.nix
