@@ -3,6 +3,7 @@
 let
   isGdmNeeded = config.services.desktopManager.gnome.enable ||
     config.services.xserver.desktopManager.budgie.enable;
+  isSddmNeeded = config.services.desktopManager.plasma6.enable;
 in
 {
 
@@ -15,7 +16,7 @@ in
     # - Hyprland
     # - xfce
     # - i3
-    displayManager.sddm.enable = !isGdmNeeded;
+    displayManager.sddm.enable = isSddmNeeded;
 
     # Enable the GNOME display manager for:
     # - GNOME Desktop Environment

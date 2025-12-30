@@ -2,7 +2,7 @@
 
 {
   programs = {
-    # niri.enable = true;
+    niri.enable = true;
     # niri.xwayland.enable = true;
     # Enable dconf for programs that might need it
     dconf.enable = true;
