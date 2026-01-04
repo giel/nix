@@ -30,8 +30,7 @@
       ../../modules/packages/vm_incus.nix
 
       # choose desktop set with KDE:
-      # ../../modules/desktop/kde.nix
-      ../../modules/desktop/kde6.nix
+      ../../modules/desktop/kde.nix
       #  ../../modules/desktop/hyprland.nix
       #  ../../modules/desktop/i3_xfce.nix
       #  ../../modules/desktop/xfce.nix

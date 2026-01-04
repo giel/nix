@@ -1,14 +1,15 @@
 { pkgs, config, ... }:
 # meant as a generic login manager
 let
-  isGdmNeeded = config.services.desktopManager.gnome.enable ||
+  isGdmNeeded =
+    config.services.desktopManager.gnome.enable ||
     config.services.xserver.desktopManager.budgie.enable;
-  isSddmNeeded = config.services.desktopManager.plasma6.enable;
+  isSddmNeeded =
+    config.services.desktopManager.plasma6.enable ||
+    pkgs.programs.hyprland.enable ||
+    pkgs.programs.niri.enable;
 in
 {
-
-  # trace: warning: The option `services.xserver.displayManager.sddm.enable' has been
-  # renamed to `services.displayManager.sddm.enable'.
 
   services = {
     # Enable SSDM display managere for set of:

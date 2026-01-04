@@ -26,7 +26,6 @@
     # KDE Plasma user settings
     plasma-manager = {
       # Add "inputs.plasma-manager.homeManagerModules.plasma-manager" to the home-manager.users.${user}.imports
-      # url = "github:pjones/plasma-manager";
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
@@ -52,7 +51,8 @@
         user = "giels";
         userName = "Giel Scharff";
         timeZone = "Europe/Amsterdam";
-        version = "23.11";
+        # version = "23.11";
+        version = "25.11";
       };
       specialArgs = {
         pkgs-stable = import nixpkgs-stable {
